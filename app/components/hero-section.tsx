@@ -1,13 +1,29 @@
 "use client";
 
-import {motion} from "framer-motion";
+import {motion, useScroll, useTransform} from "framer-motion";
 import {heroTriangle, riseWithFade, staggerChildren} from "@/app/utils/animations";
 import {AnimatedWords} from "@/app/components/ui/animated-words";
+import Image from "next/image";
+import {useRef} from "react";
 
 export const HeroSection = () => {
+    const sectionRef = useRef(null);
+    const {scrollYProgress} = useScroll({
+        target: sectionRef,
+        offset: ['start end', 'end start']
+    })
+
+    const y = useTransform(scrollYProgress, [0, 1], ["-20%", "10%"])
+
     return (
-        <motion.div initial="initial" animate="animate"
-                    className="min-h-screen flex items-start md:items-center relative py-24 pt-[250px] pb-[100px] bg-hero-mobile md:bg-hero bg-cover bg-center overflow-hidden">
+        <motion.div ref={sectionRef} initial="initial" animate="animate"
+                    className="relative min-h-screen flex items-start md:items-center py-24 pt-[250px] pb-[100px]  bg-cover bg-center overflow-hidden">
+            <motion.div className="absolute top-0 w-full h-[120%] -z-10" style={{top: y}}>
+                <Image src={"/img/hero-mobile.png"} alt={'hero'} fill
+                       className={"object-cover md:hidden"}/>
+                <Image src={"/img/hero-bg-big.jpg"} alt={'hero2'} fill
+                       className={"object-cover hidden md:block"}/>
+            </motion.div>
             <motion.div
                 variants={heroTriangle}
                 className="triangle-left-bottom w-full absolute left-0 top-1/2 bottom-0 mix-blend-multiply bg-accent md:hidden"></motion.div>

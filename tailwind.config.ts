@@ -38,7 +38,6 @@ const config: Config = {
       },
       backgroundImage: {
         'header-pattern': "url('/img/header-pattern.png')",
-        'hero': "url('/img/hero-bg.jpg')",
         'hero-mobile': "url('/img/hero-mobile.png')",
         'welcome-pattern': "url('/img/welcome-pattern.png')",
         'banner': "url('/img/banner-bg.png')",

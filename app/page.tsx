@@ -1,3 +1,5 @@
+"use client"
+
 import {Header} from "@/app/components/header";
 import {HeroSection} from "@/app/components/hero-section";
 import WelcomeSection from "@/app/components/welcome-section";
@@ -11,8 +13,21 @@ import SocialsSection from "@/app/components/socials-section";
 import GetInTouchSection from "@/app/components/get-in-touch-section";
 import PartnersSection from "@/app/components/partners-section";
 import Footer from "@/app/components/footer";
+import {useEffect} from "react";
+import Lenis from "lenis";
 
 export default function Home() {
+    useEffect(() => {
+        const lenis = new Lenis()
+
+        function raf(time: number) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
+    }, [])
+
     return (
         <>
             <Header/>

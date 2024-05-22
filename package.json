@@ -12,6 +12,7 @@
     "@fontsource/poppins": "^5.0.14",
     "@fontsource/russo-one": "^5.0.20",
     "framer-motion": "^11.2.5",
+    "lenis": "^1.0.45",
     "next": "14.2.3",
     "react": "18",
     "react-dom": "18",
