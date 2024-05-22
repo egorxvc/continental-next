@@ -1,9 +1,9 @@
 import Image from "next/image";
-import partnerImage1 from "@/img/partners/partner1.png";
-import partnerImage2 from "@/img/partners/partner2.png";
-import partnerImage3 from "@/img/partners/partner3.png";
-import partnerImage4 from "@/img/partners/partner4.png";
-import partnerImage5 from "@/img/partners/partner5.png";
+import partnerImage1 from "@/public/img/partners/partner1.png";
+import partnerImage2 from "@/public/img/partners/partner2.png";
+import partnerImage3 from "@/public/img/partners/partner3.png";
+import partnerImage4 from "@/public/img/partners/partner4.png";
+import partnerImage5 from "@/public/img/partners/partner5.png";
 
 export default function PartnersSection() {
     return (

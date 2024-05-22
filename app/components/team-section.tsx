@@ -1,7 +1,7 @@
 import Image from "next/image";
 import {useRef} from "react";
 import {motion, useScroll, useTransform} from "framer-motion";
-import vasiliyVladikinIImage from "@/img/team/vasily-vladykin.png";
+import vasiliyVladikinIImage from "@/public/img/team/vasily-vladykin.png";
 export default function TeamSection() {
     return (
         <>

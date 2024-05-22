@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logoImage from "@/img/logo-2.png";
+import logoImage from "@/public/img/logo-2.png";
 export default function GetInTouchSection() {
     return (
         <div className="bg-getintouch-pattern bg-cover bg-no-repeat bg-bottom pt-64 pb-[560px] overflow-hidden">

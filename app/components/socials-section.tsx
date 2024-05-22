@@ -1,7 +1,7 @@
 import Image from "next/image";
-import socialImage1 from "@/img/socials/social1.png";
-import socialImage2 from "@/img/socials/social2.png";
-import socialImage3 from "@/img/socials/social3.png";
+import socialImage1 from "@/public/img/socials/social1.png";
+import socialImage2 from "@/public/img/socials/social2.png";
+import socialImage3 from "@/public/img/socials/social3.png";
 export default function SocialsSection() {
     return (
         <div className="bg-socials-pattern  py-16 md:py-32 bg-cover">

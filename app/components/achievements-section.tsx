@@ -1,10 +1,10 @@
 import Image from "next/image";
 import {motion, useScroll, useTransform} from "framer-motion";
 import {useRef} from "react";
-import achievementImage1 from "@/img/achievements/ach1.png"
-import achievementImage2 from "@/img/achievements/ach2.png"
-import achievementImage3 from "@/img/achievements/ach3.png"
-import achievementImage4 from "@/img/achievements/ach4.png"
+import achievementImage1 from "@/public/img/achievements/ach1.png"
+import achievementImage2 from "@/public/img/achievements/ach2.png"
+import achievementImage3 from "@/public/img/achievements/ach3.png"
+import achievementImage4 from "@/public/img/achievements/ach4.png"
 export default function AchievementsSection() {
     const sectionRef = useRef(null);
     const {scrollYProgress} = useScroll({
