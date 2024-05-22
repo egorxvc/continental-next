@@ -2,32 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+.stroke-text {
+    --text-color: #000;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px var(--text-color);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.stroke-text-accent {
+    --text-color: #DA0A0A;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.stroke-text-white {
+    --text-color: #fff;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.parallelogram {
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+}
+
+.parallelogram-md {
+    @media (min-width: 768px) {
+        clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+    }
+}
+
+.triangle {
+    clip-path: polygon(0 0, 0% 100%, 100% 0);
+}
+
+.triangle-left-bottom {
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+}
+
+.h1 {
+    @apply font-mono font-medium text-4xl md:text-8xl uppercase
+}
+
+.h2 {
+    @apply font-mono font-medium text-3xl md:text-7xl uppercase
+}
+
+.h3 {
+    @apply font-mono font-medium text-2xl md:text-6xl uppercase
+}
+
+.h4 {
+    @apply font-mono font-medium text-xl md:text-5xl uppercase
+}
+
+.h5 {
+    @apply font-mono font-medium text-lg md:text-4xl uppercase
+}
+
+.body {
+    @apply text-small md:text-lg
+}
+
+.caption {
+    @apply text-small md:text-2xl
+}
+
+.small {
+    @apply text-sm sm:text-xs
 }
