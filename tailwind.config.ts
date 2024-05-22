@@ -1,6 +1,11 @@
 import type { Config } from "tailwindcss";
 import defaultTheme from 'tailwindcss/defaultTheme'
 
+const nextConfig = {
+  assetPrefix: '/continental-next/',
+  basePath: '/continental-next',
+};
+
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -37,14 +42,14 @@ const config: Config = {
         '8xl': '110px',
       },
       backgroundImage: {
-        'header-pattern': "url('/img/header-pattern.png')",
-        'hero-mobile': "url('/img/hero-mobile.png')",
-        'welcome-pattern': "url('/img/welcome-pattern.png')",
-        'banner': "url('/img/banner-bg.png')",
-        'achievements-pattern': "url('/img/achievements-pattern.png')",
-        'socials-pattern': "url('/img/socials-pattern.png')",
-        'getintouch-pattern': "url('/img/getintouch-pattern.png')",
-        'footer-pattern': "url('/img/footer-pattern.png')",
+        'header-pattern': `url('${nextConfig.basePath}/img/header-pattern.png')`,
+        'hero-mobile': `url('${nextConfig.basePath}/img/hero-mobile.png')`,
+        'welcome-pattern': `url('${nextConfig.basePath}/img/welcome-pattern.png')`,
+        'banner': `url('${nextConfig.basePath}/img/banner-bg.png')`,
+        'achievements-pattern': `url('${nextConfig.basePath}/img/achievements-pattern.png')`,
+        'socials-pattern': `url('${nextConfig.basePath}/img/socials-pattern.png')`,
+        'getintouch-pattern': `url('${nextConfig.basePath}/img/getintouch-pattern.png')`,
+        'footer-pattern': `url('${nextConfig.basePath}/img/footer-pattern.png')`,
       }
     },
   },

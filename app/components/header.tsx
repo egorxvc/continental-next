@@ -15,7 +15,7 @@ export const Header = () => {
                         <a href="#"
                            className="text-center font-bold hover:text-accent uppercase flex-1 transition-colors ease-in-out duration-300">Our
                             Cars</a>
-                        <Image src="/logo.svg" width={100} height={100} alt="logo" className="justify-self-center flex-1"></Image>
+                        <Image src={'/img/logo.png'} width={158} height={63} alt="logo" className="justify-self-center flex-1"></Image>
                         <a href="#"
                            className="text-center font-bold hover:text-accent uppercase flex-1 transition-colors ease-in-out duration-300">Achievements</a>
                         <a href="#"
@@ -35,7 +35,7 @@ export const Header = () => {
                             fill="black" fillOpacity="0.6"/>
                     </svg>
                 </button>
-                <Image alt="logo" src="/logo.svg" width={100} height={100}  className="flex-1"></Image>
+                <Image alt="logo" src={'/img/logo.png'} width={158} height={63}  className="flex-1"></Image>
             </div>
         </>
     )
