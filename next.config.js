@@ -15,9 +15,5 @@ if (isGithubActions) {
 
 module.exports = {
     assetPrefix: assetPrefix,
-    basePath: basePath,
-    // images: {
-    //     loader: 'imgix',
-    //     path: 'https://egorxvc-929656266.imgix.net',
-    // },
+    basePath: basePath
 }

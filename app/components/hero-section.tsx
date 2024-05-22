@@ -6,6 +6,9 @@ import {AnimatedWords} from "@/app/components/ui/animated-words";
 import Image from "next/image";
 import {useRef} from "react";
 
+import heroMobileImage from "@/public/img/hero-mobile.png";
+import heroDesktopImage from "@/public/img/hero-bg-big.jpg";
+
 export const HeroSection = () => {
     const sectionRef = useRef(null);
     const {scrollYProgress} = useScroll({
@@ -19,9 +22,9 @@ export const HeroSection = () => {
         <motion.div ref={sectionRef} initial="initial" animate="animate"
                     className="relative min-h-screen flex items-start md:items-center py-24 pt-[250px] pb-[100px]  bg-cover bg-center overflow-hidden">
             <motion.div className="absolute top-0 w-full h-[120%] -z-10" style={{top: y}}>
-                <Image src={"/img/hero-mobile.png"} alt={'hero'} fill
+                <Image src={heroMobileImage.src} alt={'hero'} fill
                        className={"object-cover md:hidden"}/>
-                <Image src={"/img/hero-bg-big.jpg"} alt={'hero2'} fill
+                <Image src={heroDesktopImage.src}  alt={'hero2'} fill
                        className={"object-cover hidden md:block"}/>
             </motion.div>
             <motion.div

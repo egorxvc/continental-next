@@ -1,7 +1,10 @@
 import Image from "next/image";
 import {motion, useScroll, useTransform} from "framer-motion";
 import {useRef} from "react";
-
+import achievementImage1 from "@/img/achievements/ach1.png"
+import achievementImage2 from "@/img/achievements/ach2.png"
+import achievementImage3 from "@/img/achievements/ach3.png"
+import achievementImage4 from "@/img/achievements/ach4.png"
 export default function AchievementsSection() {
     const sectionRef = useRef(null);
     const {scrollYProgress} = useScroll({
@@ -24,7 +27,7 @@ we are proud of</span>
                         className="relative h-[250px] md:h-[500px] flex flex-col items-center justify-center text-center bg-cover  h4 text-white overflow-hidden">
                         <motion.div className="absolute w-full h-[140%] " style={{top: y}}>
                             <div className="absolute inset-0 bg-accent z-10 mix-blend-multiply"></div>
-                            <Image src={"/img/achievements/ach1.png"} alt={'banner'} fill
+                            <Image src={achievementImage1.src} alt={'banner'} fill
                                    className={"object-cover w-full"}/>
                         </motion.div>
                         <div className="relative z-10">
@@ -36,7 +39,7 @@ we are proud of</span>
                         className="relative h-[250px] md:h-[500px] flex flex-col items-center justify-center text-center bg-cover  h4 text-white overflow-hidden lg:col-span-2">
                         <motion.div className="absolute w-full h-[140%] " style={{top: y}}>
                             <div className="absolute inset-0 bg-accent z-10 mix-blend-multiply"></div>
-                            <Image src={"/img/achievements/ach2.png"} alt={'banner'} fill
+                            <Image src={achievementImage2.src} alt={'banner'} fill
                                    className={"object-cover w-full"}/>
                         </motion.div>
                         <div className="relative z-10">
@@ -48,7 +51,7 @@ we are proud of</span>
                         className="relative h-[250px] md:h-[500px] flex flex-col items-center justify-center text-center bg-cover  h4 text-white overflow-hidden lg:col-span-2">
                         <motion.div className="absolute w-full h-[140%] " style={{top: y}}>
                             <div className="absolute inset-0 bg-accent z-10 mix-blend-multiply"></div>
-                            <Image src={"/img/achievements/ach3.png"} alt={'banner'} fill
+                            <Image src={achievementImage3.src} alt={'banner'} fill
                                    className={"object-cover w-full"}/>
                         </motion.div>
                         <div className="relative z-10">
@@ -61,7 +64,7 @@ we are proud of</span>
                         <motion.div className="absolute w-full h-[140%]" style={{top: y}}>
                             <div
                                 className="absolute inset-0 bg-accent z-10 mix-blend-multiply"></div>
-                            <Image src={"/img/achievements/ach4.png"} alt={'banner'} fill
+                            <Image src={achievementImage4.src} alt={'banner'} fill
                                    className={"object-cover w-full"}/>
                         </motion.div>
                         <div className="relative z-10">

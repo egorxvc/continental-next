@@ -1,11 +1,12 @@
 import Image from "next/image";
+import logoImage from "@/img/logo-text.png";
 
 export default function Footer() {
     return (
         <footer className="bg-footer-pattern bg-top bg-contain bg-no-repeat pt-[300px] pb-28">
             <div className="container mx-auto">
                 <div className="flex flex-col md:flex-row gap-6 justify-between mb-28">
-                    <Image src={'/img/logo-text.png'} width={235} height={92} alt="logo" className="object-contain"/>
+                    <Image src={logoImage.src} width={235} height={92} alt="logo" className="object-contain"/>
                     <div className="flex flex-col gap-2 md:flex-row md:gap-28">
                         <div className="flex flex-col gap-2">
                             <a href="#" className="font-bold text-gray-600 uppercase hover:text-accent">Racing Team</a>

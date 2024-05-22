@@ -1,5 +1,7 @@
 import Image from "next/image";
-
+import socialImage1 from "@/img/socials/social1.png";
+import socialImage2 from "@/img/socials/social2.png";
+import socialImage3 from "@/img/socials/social3.png";
 export default function SocialsSection() {
     return (
         <div className="bg-socials-pattern  py-16 md:py-32 bg-cover">
@@ -10,13 +12,13 @@ export default function SocialsSection() {
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 justify-center relative z-10 w-full">
                     <div className="flex items-center justify-center">
-                        <Image src="/img/socials/social1.png" width={408} height={562} className="shadow rounded-2xl object-contain" alt="social1"/>
+                        <Image src={socialImage1.src} width={408} height={562} className="shadow rounded-2xl object-contain" alt="social1"/>
                     </div>
                     <div className="flex items-center justify-center">
-                        <Image src="/img/socials/social2.png" width={408} height={562} className="shadow rounded-2xl object-contain" alt="social2"/>
+                        <Image src={socialImage2.src} width={408} height={562} className="shadow rounded-2xl object-contain" alt="social2"/>
                     </div>
                     <div className="flex items-center justify-center">
-                        <Image src="/img/socials/social3.png" width={408} height={562} className="shadow rounded-2xl object-contain" alt="social3"/>
+                        <Image src={socialImage3.src} width={408} height={562} className="shadow rounded-2xl object-contain" alt="social3"/>
                     </div>
                 </div>
                 <div

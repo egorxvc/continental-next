@@ -1,7 +1,7 @@
 import Image from "next/image";
 import {useRef} from "react";
 import {motion, useScroll, useTransform} from "framer-motion";
-
+import vasiliyVladikinIImage from "@/img/team/vasily-vladykin.png";
 export default function TeamSection() {
     return (
         <>
@@ -15,7 +15,7 @@ export default function TeamSection() {
 
                     <div className="flex justify-center -mt-10">
                         <div className="relative">
-                            <Image src={'/img/team/vasily-vladykin.png'} width={728} height={666} alt="vasily-vladykin"/>
+                            <Image src={vasiliyVladikinIImage.src} width={728} height={666} alt="vasily-vladykin"/>
                             <span className="text-xl lg:absolute top-1/4 -right-1/4">
                                 Founder, Partner, <br/>Racing Driver
                             </span>

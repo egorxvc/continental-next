@@ -1,10 +1,10 @@
 import Image from "next/image";
-
+import logoImage from "@/img/logo-2.png";
 export default function GetInTouchSection() {
     return (
         <div className="bg-getintouch-pattern bg-cover bg-no-repeat bg-bottom pt-64 pb-[560px] overflow-hidden">
             <div className="container mx-auto flex flex-col items-center text-white">
-                <Image src="/img/logo-2.png" width={503} height={199} className="mb-8" alt="logo"/>
+                <Image src={logoImage.src} width={503} height={199} className="mb-8" alt="logo"/>
                 <h2 className="h2 !leading-normal">GET IN TOUCH!</h2>
                 <span className="caption text-center mb-8 md:mb-16">Ready to race your way to the top?<br/> Become a champion with us!</span>
                 <div className="flex gap-8 mb-10 md:mb-28">

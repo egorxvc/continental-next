@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Paragraph from "@/app/components/ui/paragraph";
+import historyImage1 from "@/public/img/history/history-img-1.png"
+import historyImage2 from "@/public/img/history/history-img-2.png"
 
 export default function HistorySection() {
     return (
@@ -14,10 +16,10 @@ export default function HistorySection() {
                 <div className="flex flex-col lg:flex-row gap-2 md:gap-8 ">
                     <div className="lg:flex-shrink-0">
                         <Paragraph>
-                            <Image src={"/img/history/history-img-1.png"} alt={"History"} width={465} height={363}/>
+                            <Image src={historyImage1.src} alt={"History"} width={465} height={363}/>
                         </Paragraph>
                         <Paragraph>
-                            <Image className="hidden md:block" src={"/img/history/history-img-2.png"} alt={"History"}
+                            <Image className="hidden md:block" src={historyImage2.src} alt={"History"}
                                    width={465} height={363}/>
                         </Paragraph>
                     </div>

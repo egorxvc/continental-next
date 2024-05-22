@@ -5,10 +5,6 @@ export default function WelcomeSection() {
         <div className="bg-welcome-pattern bg-cover">
             <div className="container mx-auto">
                 <div className="text-center max-w-5xl mx-auto py-36 flex flex-col gap-8 caption">
-                    {/*<div>*/}
-                    {/*    <AnimatedWords*/}
-                    {/*        title="Welcome to the thrilling world of Continental Racing, where speed meets strategy and passion meets precision. As a distinguished Racing Team and an advanced Racing Academy, we are committed to the pursuit of excellence both on and off the track."/>*/}
-                    {/*</div>*/}
                     <Paragraph>
                         Welcome to the thrilling world of <b>Continental Racing</b>, where speed meets strategy and
                         passion meets precision. As a
