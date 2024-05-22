@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    assetPrefix: '/continental-next/'
+};
 
 export default nextConfig;
