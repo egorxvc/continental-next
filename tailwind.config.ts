@@ -1,10 +1,15 @@
 import type { Config } from "tailwindcss";
 import defaultTheme from 'tailwindcss/defaultTheme'
+const isGithubActions = process.env.GITHUB_ACTIONS || false
 
-const nextConfig = {
-  assetPrefix: '/continental-next/',
-  basePath: '/continental-next',
-};
+let basePath = ''
+
+if (isGithubActions) {
+  // trim off `<owner>/`
+  // @ts-ignore
+  const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')
+  basePath = `/${repo}`
+}
 
 const config: Config = {
   content: [
@@ -42,14 +47,14 @@ const config: Config = {
         '8xl': '110px',
       },
       backgroundImage: {
-        'header-pattern': `url('${nextConfig.basePath}/img/header-pattern.png')`,
-        'hero-mobile': `url('${nextConfig.basePath}/img/hero-mobile.png')`,
-        'welcome-pattern': `url('${nextConfig.basePath}/img/welcome-pattern.png')`,
-        'banner': `url('${nextConfig.basePath}/img/banner-bg.png')`,
-        'achievements-pattern': `url('${nextConfig.basePath}/img/achievements-pattern.png')`,
-        'socials-pattern': `url('${nextConfig.basePath}/img/socials-pattern.png')`,
-        'getintouch-pattern': `url('${nextConfig.basePath}/img/getintouch-pattern.png')`,
-        'footer-pattern': `url('${nextConfig.basePath}/img/footer-pattern.png')`,
+        'header-pattern': `url('${basePath}/img/header-pattern.png')`,
+        'hero-mobile': `url('${basePath}/img/hero-mobile.png')`,
+        'welcome-pattern': `url('${basePath}/img/welcome-pattern.png')`,
+        'banner': `url('${basePath}/img/banner-bg.png')`,
+        'achievements-pattern': `url('${basePath}/img/achievements-pattern.png')`,
+        'socials-pattern': `url('${basePath}/img/socials-pattern.png')`,
+        'getintouch-pattern': `url('${basePath}/img/getintouch-pattern.png')`,
+        'footer-pattern': `url('${basePath}/img/footer-pattern.png')`,
       }
     },
   },
