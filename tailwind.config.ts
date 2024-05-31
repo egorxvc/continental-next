@@ -29,10 +29,11 @@ const config: Config = {
     },
     extend: {
       colors: {
-        'accent': '#DA0A0A'
+        'accent': '#DA0A0A',
+        'accent-hover': '#BC0808',
       },
       fontFamily: {
-        sans: ['Poppins', ...defaultTheme.fontFamily.sans],
+        sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
         mono: ['Russo One', ...defaultTheme.fontFamily.mono]
       },
       fontSize: {

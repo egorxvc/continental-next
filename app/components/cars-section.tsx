@@ -3,10 +3,13 @@
 import {useRef, useState} from "react";
 import {motion, useScroll, useTransform} from "framer-motion";
 
-import carImg from "../../public/img/cars/car.png"
+import dd2Img from "../../public/img/cars/dd2.png"
+import clioImg from "../../public/img/cars/Clio.png"
+import supraImg from "../../public/img/cars/supra.png"
+import todoImg from "../../public/img/cars/todo.png"
 
 const cars = [{
-    imgSrc: carImg.src,
+    imgSrc: dd2Img.src,
     name: 'dd2 rotax',
     descriptionTitle: 'Maximum Performance/Power',
     description: '34 hp at 12,000 rpm',
@@ -26,26 +29,113 @@ const cars = [{
     ]
 
 }, {
-    imgSrc: carImg.src,
-    name: 'dd3 speed',
+    imgSrc: todoImg.src,
+    name: 'Renault Megane R.S.',
     descriptionTitle: 'Maximum Performance/Power',
-    description: '34 hp at 13,000 rpm',
+    description: '250 hp at 6 500 rpm',
     settings: [
         {
             title: 'Weight',
-            value: '150 kg',
+            value: '1 200 kg',
         },
         {
             title: 'Acceleration',
-            value: 'From 0 to 120 km/h in 3.5 sec',
+            value: 'From 0 to 100 km/h in 6.5 sec',
         },
         {
             title: 'Special features',
-            value: 'Chainless drive system, 2-speed gearbox, operated by shift paddle from the steering wheel, cylinder with electronically controlled exhaust valve',
+            value: '5 speed manual gearbox, front-wheel-drive, rollcage, racing seats',
         }
     ]
-
-}]
+},{
+    imgSrc: clioImg.src,
+    name: 'Renault Clio R.S. V (Cup)',
+    descriptionTitle: 'Maximum Performance/Power',
+    description: '200 hp at 6 500 rpm',
+    settings: [
+        {
+            title: 'Weight',
+            value: '1 030 kg',
+        },
+        {
+            title: 'Acceleration',
+            value: 'From 0 to 100 km/h in 6.9 sec\n',
+        },
+        {
+            title: 'Special features',
+            value: 'Sadev ST82 SEQ, rollcage, FIA homologated\n',
+        }
+    ]
+},
+    {
+        imgSrc: supraImg.src,
+        name: 'Toyota Supra GT4 Evo',
+        descriptionTitle: 'Maximum Performance/Power',
+        description: '430+ hp at 6 500 rpm',
+        settings: [
+            {
+                title: 'Trophies',
+                value: 'The winner of 24H Dubai GT4 Class, the first-ever winning Supra GT4 Evo in 24H Dubai GT4 Class',
+            },
+            {
+                title: '',
+                value: 'Multiple Gulf ProCar 23-24 victories in the GT4 Class ',
+            },
+            {
+                title: 'Weight',
+                value: '1 370 kg',
+            },
+            {
+                title: 'Acceleration',
+                value: 'From 0 to 100 km/h in 4.4 sec',
+            },
+            {
+                title: 'Special features',
+                value: 'Modified ZF transmission, GT4 FIA homologated',
+            },
+        ]
+    },
+    {
+        imgSrc: todoImg.src,
+        name: 'Radical SR3 XXR/XX',
+        descriptionTitle: 'Maximum Performance/Power',
+        description: '232 hp at 6 500 rpm',
+        settings: [
+            {
+                title: 'Weight',
+                value: '610 kg',
+            },
+            {
+                title: 'Acceleration',
+                value: 'From 0 to 100 km/h in 3.1 sec',
+            },
+            {
+                title: 'Special features',
+                value: 'Six-speed sequential gearbox',
+            }
+        ]
+    },
+    {
+        imgSrc: todoImg.src,
+        name: 'Audi R8 LMS GT3 Evo II',
+        descriptionTitle: 'Maximum Performance/Power',
+        description: '585 hp at 6 500 rpm',
+        settings: [
+            {
+                title: 'Weight',
+                value: '1 235 kg',
+            },
+            {
+                title: 'Acceleration',
+                value: 'From 0 to 100 km/h in 3.6 sec',
+            },
+            {
+                title: 'Special features',
+                value: 'V10 engine',
+            }
+        ]
+    }
+]
 
 export default function CarsSection() {
     const [current, setCurrent] = useState(0);
@@ -96,8 +186,8 @@ export default function CarsSection() {
                                 <motion.div
                                     key={idx}
                                     animate={{x: `calc(-${current * 100}% - ${current}rem)`}}
-                                    className="flex shrink-0  justify-center w-full relative ">
-                                    <motion.img src={car.imgSrc} alt="car" animate={{
+                                    className="flex shrink-0 justify-center w-full relative ">
+                                    <motion.img src={car.imgSrc} className="max-w-3xl" alt="car" animate={{
                                         // scale: current === idx ? 1 : 0.9,
                                         scale: current === idx ? 1 : 0.90,
                                         opacity: current === idx ? 1 : 0.4,
@@ -106,8 +196,8 @@ export default function CarsSection() {
                             ))
                         }
                     </div>
-                    <div className="flex flex-col md:flex-row items-center gap-6 lg:gap-60">
-                        <div className="flex flex-col gap-5 max-w-lg">
+                    <div className="flex flex-col md:flex-row items-start gap-6 lg:gap-60">
+                        <div className="flex flex-col gap-5 md:w-1/2 flex-1">
                             {
                                 [...cars[current].settings].map((setting, idx) => (
                                     <div className="flex flex-col gap-3" key={idx}>
@@ -117,8 +207,8 @@ export default function CarsSection() {
                                 ))
                             }
                         </div>
-                        <div className="bg-accent parallelogram -order-1 md:order-1 px-[10%] text-white">
-                            <h3 className="h3 whitespace-nowrap">{cars[current].name}</h3>
+                        <div className="bg-accent parallelogram -order-1 md:order-1 px-[20%] py-4 md:px-[10%] text-white flex-1 w-full md:w-1/2">
+                            <h3 className="h4">{cars[current].name}</h3>
                             <div className="border-t-[5px] border-white py-6 caption flex flex-col gap-3">
                                 <span className="font-bold whitespace-nowrap">{cars[current].descriptionTitle}</span>
                                 <span>{cars[current].description}</span>

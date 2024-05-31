@@ -1,5 +1,3 @@
-// next.config.js
-
 const isGithubActions = process.env.GITHUB_ACTIONS || false
 
 let assetPrefix = ''
@@ -12,8 +10,10 @@ if (isGithubActions) {
     assetPrefix = `/${repo}/`
     basePath = `/${repo}`
 }
-
-module.exports = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
     assetPrefix: assetPrefix,
     basePath: basePath
 }
+
+export default nextConfig;

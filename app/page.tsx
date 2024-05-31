@@ -29,7 +29,7 @@ export default function Home() {
     }, [])
 
     return (
-        <>
+        <div className="w-full overflow-hidden">
             <Header/>
             <HeroSection/>
             <WelcomeSection/>
@@ -43,6 +43,6 @@ export default function Home() {
             <GetInTouchSection/>
             <PartnersSection/>
             <Footer/>
-        </>
+        </div>
     );
 }

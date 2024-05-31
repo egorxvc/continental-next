@@ -5,7 +5,7 @@ export const Header = () => {
         <>
             <div className="hidden lg:block absolute left-0 top-0 w-full z-10">
                 <header className="bg-white py-6 relative">
-                    <nav className="container mx-auto class flex items-center justify-center gap-14">
+                    <nav className="container mx-auto class flex items-center justify-center gap-6">
                         <a href="#"
                            className="text-center font-bold hover:text-accent uppercase flex-1 transition-colors ease-in-out duration-300">Racing
                             team</a>

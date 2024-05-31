@@ -1,24 +1,25 @@
 import Image from "next/image";
-import logoImage from "@/public/img/logo-text.png";
+import logoImage from "@/public/img/logo-footer.png";
 
 export default function Footer() {
     return (
-        <footer className="bg-footer-pattern bg-top bg-contain bg-no-repeat pt-[300px] pb-28">
+        <footer className="bg-black bg-top text-white bg-contain bg-no-repeat pt-[300px] pb-28 relative">
+            <div className="bg-header-pattern absolute -top-2 w-full left-0 h-[300px] bg-contain bg-no-repeat"></div>
             <div className="container mx-auto">
                 <div className="flex flex-col md:flex-row gap-6 justify-between mb-28">
-                    <Image src={logoImage.src} width={235} height={92} alt="logo" className="object-contain"/>
-                    <div className="flex flex-col gap-2 md:flex-row md:gap-28">
+                    <Image src={logoImage.src} width={256} height={114} alt="logo" className="object-contain"/>
+                    <div className="flex flex-col gap-2 md:flex-row md:gap-28 font-bold text-gray-400 uppercase">
                         <div className="flex flex-col gap-2">
-                            <a href="#" className="font-bold text-gray-600 uppercase hover:text-accent">Racing Team</a>
-                            <a href="#" className="font-bold text-gray-600 uppercase hover:text-accent">Racing
+                            <a href="#" className="hover:text-accent">Racing Team</a>
+                            <a href="#" className="hover:text-accent">Racing
                                 Academy</a>
-                            <a href="#" className="font-bold text-gray-600 uppercase hover:text-accent">Our Cars</a>
+                            <a href="#" className="hover:text-accent">Our Cars</a>
                         </div>
                         <div className="flex flex-col gap-2">
-                            <a href="#" className="font-bold text-gray-600 uppercase hover:text-accent">Contact</a>
-                            <a href="#" className="font-bold text-gray-600 uppercase hover:text-accent">Racing
+                            <a href="#" className="hover:text-accent">Contact</a>
+                            <a href="#" className="hover:text-accent">Racing
                                 Academy</a>
-                            <a href="#" className="font-bold text-gray-600 uppercase hover:text-accent">About us</a>
+                            <a href="#" className="hover:text-accent">About us</a>
                         </div>
                     </div>
                     <div className="flex gap-6">

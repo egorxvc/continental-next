@@ -1,28 +1,71 @@
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
 import partnerImage1 from "@/public/img/partners/partner1.png";
 import partnerImage2 from "@/public/img/partners/partner2.png";
 import partnerImage3 from "@/public/img/partners/partner3.png";
 import partnerImage4 from "@/public/img/partners/partner4.png";
 import partnerImage5 from "@/public/img/partners/partner5.png";
+import partnerImage6 from "@/public/img/partners/partner6.png";
+import partnerImage7 from "@/public/img/partners/partner7.png";
+import useMeasure from "react-use-measure";
+import {motion, animate, useMotionValue} from "framer-motion";
+import {useEffect} from "react";
+
+const images = [
+    partnerImage1,
+    partnerImage2,
+    partnerImage3,
+    partnerImage4,
+    partnerImage5,
+    partnerImage6,
+    partnerImage7,
+]
 
 export default function PartnersSection() {
+    let [ref, {width}] = useMeasure()
+    const xTranslation = useMotionValue(0);
+
+    useEffect(() =>  {
+        let controls;
+        let finalPosition = -width / 2 - 16
+
+        controls = animate(xTranslation, [0, finalPosition], {
+            ease: 'linear',
+            duration:  20,
+            repeat:  Infinity,
+            repeatType: "loop",
+            repeatDelay: 0,
+        })
+
+        return controls.stop;
+    }, [xTranslation, width])
+
     return (
-        <section className="container mx-auto py-16 md:py-32">
-            <h2 className="h3 mb-8 md:mb-16 text-center md:text-left">
-                our <span className="text-accent">partners</span>
-            </h2>
-            <div className="flex flex-col items-center md:flex-row gap-6 md:flex-wrap lg:flex-nowrap justify-between">
-                <Image src={partnerImage1.src} width={209} height={27} alt="partner1"
-                       className="object-contain"/>
-                <Image src={partnerImage2.src} width={132} height={61} alt="partner2"
-                       className="object-contain"/>
-                <Image src={partnerImage3.src} width={175} height={63} alt="partner3"
-                       className="object-contain"/>
-                <Image src={partnerImage4.src} width={304} height={63} alt="partner4"
-                       className="object-contain"/>
-                <Image src={partnerImage5.src} width={104} height={83} alt="partner5"
-                       className="object-contain"/>
+        <section className="py-16 md:py-32 w-full overflow-hidden">
+            <div className="container mx-auto">
+                <h2 className="h3 mb-8 md:mb-16 text-center md:text-left">
+                    our <span className="text-accent">partners</span>
+                </h2>
+            </div>
+            <div className="relative h-[200px]">
+                <motion.div className="absolute left-0 flex gap-8" ref={ref} style={{
+                    x: xTranslation,
+                }}>
+                    {
+                        [...images, ...images].map((image, index) => (
+                            <ImageCard key={index} image={image}></ImageCard>
+                        ))
+                    }
+                </motion.div>
             </div>
         </section>
+    )
+}
+
+const ImageCard = ({image}: { image: StaticImageData})  =>  {
+    return (
+        <div className="relative overflow-hidden h-[200px] min-w-[200px] flex justify-center">
+            <Image src={image} fill alt="partner1"
+                   className="object-contain "/>
+        </div>
     )
 }
