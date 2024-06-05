@@ -7,7 +7,7 @@ export const riseWithFade = {
         y: 0,
         opacity: 1,
         transition: {
-            delay: 2,
+            delay: 1.5,
             ease: [0.6, 0.01, 0.05, 0.95],
             duration: 0.7,
         }

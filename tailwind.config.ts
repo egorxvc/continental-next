@@ -33,7 +33,7 @@ const config: Config = {
         'accent-hover': '#BC0808',
       },
       fontFamily: {
-        sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
+        sans: ['Poppins', ...defaultTheme.fontFamily.sans],
         mono: ['Russo One', ...defaultTheme.fontFamily.mono]
       },
       fontSize: {

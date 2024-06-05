@@ -25,9 +25,9 @@ export default function BannerSection() {
                 <Image alt="logo" height={198} width={503} src={logoImage.src}
                        className="mb-8 md:mb-0 order-1 md:order-2 max-w-full md:max-w-[513px]"/>
                 <span
-                    className="font-mono font-medium text-4xl md:text-5xl uppercase !leading-[1] stroke-text stroke-text-white md:mr-4 mb-4 md:mb-0  order-2 md:order-1">Racing</span>
+                    className="font-mono font-medium text-4xl md:text-7xl uppercase !leading-[1] stroke-text stroke-text-white md:mr-4 mb-4 md:mb-0  order-2 md:order-1">Racing</span>
                 <span
-                    className="font-mono font-medium text-4xl md:text-5xl uppercase !leading-[1] stroke-text stroke-text-white order-3">Academy</span>
+                    className="font-mono font-medium text-4xl md:text-7xl uppercase !leading-[1] stroke-text stroke-text-white order-3">Academy</span>
             </div>
         </div>
     )

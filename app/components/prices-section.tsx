@@ -149,17 +149,17 @@ export default function PricesSection() {
                                     }}
                                 >
                                     <div className="flex flex-col items-start">
-                                        <h3 className="h3">{price.title}</h3>
-                                        <div className="border-t-[5px] border-white flex py-6 caption flex-col gap-6">
+                                        <h3 className="h4">{price.title}</h3>
+                                        <div className="border-t-[5px] border-white flex py-6 body flex-col gap-6">
                                             {
-                                                [...price.carList].map((car, idx) => (
+                                                [...price.carList].map((car, _) => (
                                                     <div key={car.title} className="flex flex-col gap-1">
                                                         {car.title && <span className="font-bold">{car.title}</span>}
                                                         <div className="flex">
                                                             <div
                                                                 className="flex flex-col pr-4 border-r-2 border-white max-w-screen-2xl">
                                                                 {
-                                                                    [...car.list].map((item, idx) => (
+                                                                    [...car.list].map((item, _) => (
                                                                         <span key={item.name}>
                                                                             <span>{item.name}</span>
                                                                         </span>
@@ -168,7 +168,7 @@ export default function PricesSection() {
                                                             </div>
                                                             <div className="flex flex-col pl-4">
                                                                 {
-                                                                    [...car.list].map((item, idx) => (
+                                                                    [...car.list].map((item, _) => (
                                                                         <span key={item.price}>{item.price}</span>
                                                                     ))
                                                                 }

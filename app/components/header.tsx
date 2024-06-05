@@ -5,15 +5,15 @@ export const Header = () => {
         <>
             <div className="hidden lg:block absolute left-0 top-0 w-full z-10">
                 <header className="bg-white py-6 relative">
-                    <nav className="container mx-auto class flex items-center justify-center gap-6">
+                    <nav className="text-xs xl:text-base container mx-auto class flex items-center justify-center gap-6">
                         <a href="#"
-                           className="text-center font-bold hover:text-accent uppercase flex-1 transition-colors ease-in-out duration-300">Racing
+                           className="whitespace-nowrap text-center font-bold hover:text-accent uppercase flex-1 transition-colors ease-in-out duration-300">Racing
                             team</a>
                         <a href="#"
-                           className="text-center font-bold hover:text-accent uppercase flex-1 transition-colors ease-in-out duration-300">Racing
+                           className="whitespace-nowrap text-center font-bold hover:text-accent uppercase flex-1 transition-colors ease-in-out duration-300">Racing
                             Academy</a>
                         <a href="#"
-                           className="text-center font-bold hover:text-accent uppercase flex-1 transition-colors ease-in-out duration-300">Our
+                           className="whitespace-nowrap text-center font-bold hover:text-accent uppercase flex-1 transition-colors ease-in-out duration-300">Our
                             Cars</a>
                         <Image src={logo.src} width={158} height={63} alt="logo" className="justify-self-center flex-1"></Image>
                         <a href="#"
@@ -35,7 +35,9 @@ export const Header = () => {
                             fill="black" fillOpacity="0.6"/>
                     </svg>
                 </button>
-                <Image alt="logo" src={logo.src} width={158} height={63}  className="flex-1"></Image>
+                <div className="flex-1 flex items-center justify-center w-full -ml-[40px]">
+                <Image alt="logo" src={logo.src} width={158} height={63}  ></Image>
+                </div>
             </div>
         </>
     )

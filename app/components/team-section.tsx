@@ -1,9 +1,9 @@
 import Image from "next/image";
 import {useRef, useState} from "react";
 import {motion, MotionConfig, useScroll, useTransform} from "framer-motion";
-import vasiliyVladikinIImage from "@/public/img/team/vasily-vladykin.png";
-import mikhailLobodaImage from "@/public/img/team/mikhail-loboda.jpg";
-import vagifGulievImage from "@/public/img/team/vagif-guliev.jpg";
+import vasiliyVladikinIImage from "@/public/img/team/vasily-vladykin.jpg";
+import mikhailLobodaImage from "@/public/img/team/mikhail-lobodaa.jpg";
+import vagifGuliyevImage from "@/public/img/team/vagif-guliyev.jpg";
 import stasBurmistrovImage from "@/public/img/team/stas-burmistrov.jpg";
 import georgeRaspletinImage from "@/public/img/team/george-raspletin.jpg";
 
@@ -23,8 +23,8 @@ const teamList = [
     },
     {
         firstName: "Vagif",
-        secondName: 'Guliev',
-        imgSrc: vagifGulievImage,
+        secondName: 'Guliyev',
+        imgSrc: vagifGuliyevImage,
         description: 'Partner',
         achievements: [
             '13 years of GCC experience in business, administration and investment',
@@ -127,6 +127,13 @@ export default function TeamSection() {
                                             <Image src={item.imgSrc} width={728} height={666}
                                                    alt="vasily-vladykin"/>
                                             <motion.div
+                                                transition={{
+                                                   delay: 0.3
+                                                }}
+                                                animate={{
+                                                    opacity: current === index ? 1 : 0,
+                                                    translateX: current === index ? 0 : 300
+                                                }}
                                                 className="flex flex-col gap-4 w-full lg:max-w-md bg-black text-white lg:absolute top-2/3 -right-12 p-6">
                                                 <div className="text-lg font-bold">{item.description}</div>
                                                 <div className="flex flex-col gap-2">
