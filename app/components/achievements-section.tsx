@@ -1,7 +1,7 @@
 import Image from "next/image";
 import {motion, useScroll, useTransform} from "framer-motion";
 import {useRef} from "react";
-import achievementImage4 from "@/public/img/achievements/ach4.png"
+import achievementImage4 from "@/public/img/achievements/ach.jpg"
 import clioImage23Image from  "@/public/img/achievements/Clio22-23.jpg"
 import clioImage24Image from  "@/public/img/achievements/clio-23-24.jpg"
 import gulfImage23Image from  "@/public/img/achievements/gulf22-23.jpg"
