@@ -38,14 +38,11 @@ export const HeroSection = () => {
                     <AnimatedWords title="One team"/></motion.span>
                 <motion.span className="h1 !leading-[1] h-[36px] md:h-[110px] stroke-text stroke-text-white">
                     <AnimatedWords title="One dream"/></motion.span>
-                <motion.span className="h1 !leading-[1] h-[36px] md:h-[110px]"><AnimatedWords title="Racing for all"/>
-                </motion.span>
                 <motion.div variants={riseWithFade} className="max-w-3xl mt-8">
                     <p className="caption bg-black inline">We unite under a single vision to push the
                         boundaries of
-                        speed and skill, making racing available to all.</p>
+                        speed and skill, making racing available to all</p>
                 </motion.div>
-
             </motion.div>
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
                 <svg className=" animate-bounce" width="76" height="35" viewBox="0 0 76 35" fill="none"

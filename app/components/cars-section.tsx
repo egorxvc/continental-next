@@ -197,19 +197,19 @@ export default function CarsSection() {
                         }
                     </div>
                     <div className="flex flex-col md:flex-row items-start gap-6 lg:gap-60">
-                        <div className="flex flex-col gap-5 md:w-1/2 flex-1">
+                        <div className="flex flex-col gap-3 md:w-1/2 flex-1">
                             {
                                 [...cars[current].settings].map((setting, idx) => (
-                                    <div className="flex flex-col gap-3" key={idx}>
-                                        <span className="text-lg md:text-xl font-bold">{setting.title}</span>
-                                        <span className="text-small md:text-xl">{setting.value}</span>
+                                    <div className="flex flex-col gap-1" key={idx}>
+                                        <span className="text-lg md:body font-bold">{setting.title}</span>
+                                        <span className="text-small md:body">{setting.value}</span>
                                     </div>
                                 ))
                             }
                         </div>
                         <div className="bg-accent parallelogram -order-1 md:order-1 px-[20%] py-4 md:px-[10%] text-white flex-1 w-full md:w-1/2">
-                            <h3 className="h4">{cars[current].name}</h3>
-                            <div className="border-t-[5px] border-white py-6 caption flex flex-col gap-3">
+                            <h3 className="h5">{cars[current].name}</h3>
+                            <div className="border-t-[5px] border-white py-6 body flex flex-col gap-3">
                                 <span className="font-bold whitespace-nowrap">{cars[current].descriptionTitle}</span>
                                 <span>{cars[current].description}</span>
                             </div>

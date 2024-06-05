@@ -1,6 +1,7 @@
 import type {Metadata} from "next";
 import "./globals.css";
-import '@fontsource/montserrat';
+import '@fontsource/poppins';
+import "@fontsource/poppins/700.css";
 import '@fontsource/russo-one';
 
 

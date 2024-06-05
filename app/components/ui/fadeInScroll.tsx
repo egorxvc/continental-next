@@ -1,9 +1,9 @@
 "use client"
 
 import {useRef} from "react";
-import {motion, useScroll, useTransform} from "framer-motion";
+import {motion, useScroll} from "framer-motion";
 
-export default function Paragraph({children}: {children: any}) {
+export default function FadeInScroll({children}: {children: any}) {
     const element = useRef(null);
     const {scrollYProgress} = useScroll({
         target: element,
@@ -12,8 +12,8 @@ export default function Paragraph({children}: {children: any}) {
 
     return (
         // @ts-ignore
-        <motion.p className="" ref={element} style={{opacity: scrollYProgress}}>
+        <motion.div ref={element} style={{opacity: scrollYProgress}}>
             {children}
-        </motion.p>
+        </motion.div>
     )
 }
