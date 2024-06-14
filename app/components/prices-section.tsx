@@ -169,7 +169,7 @@ export default function PricesSection() {
 
                     </div>
                     <motion.div
-                        animate={{x: `calc(-${current * 100}% - ${current}rem)`}}
+                        animate={{x: `calc(-${current * 100}% - ${0}rem)`}}
                         className="flex flex-nowrap gap-4">
                         {
                             [...prices].map((price, idx) => (
