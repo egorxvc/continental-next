@@ -23,8 +23,8 @@ const config: Config = {
         DEFAULT: '1rem',
         sm: '2rem',
         lg: '4rem',
-        xl: '0',
-        '2xl': '0',
+        xl: '4rem',
+        '2xl': '2rem',
       },
     },
     extend: {
@@ -55,7 +55,8 @@ const config: Config = {
         'achievements-pattern': `url('${basePath}/img/achievements-pattern.png')`,
         'socials-pattern': `url('${basePath}/img/socials-pattern.png')`,
         'getintouch-pattern': `url('${basePath}/img/getintouch-pattern.png')`,
-        'footer-pattern': `url('${basePath}/img/footer-pattern.png')`,
+        'pattern-1': `url('${basePath}/img/pattern-1.png')`,
+        'pattern-2': `url('${basePath}/img/pattern-2.png')`,
       }
     },
   },
