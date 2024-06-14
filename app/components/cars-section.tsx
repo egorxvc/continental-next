@@ -1,13 +1,14 @@
 "use client";
 
 import {useRef, useState} from "react";
-import {motion, MotionConfig, useScroll, useTransform} from "framer-motion";
+import {motion, MotionConfig, useScroll, useTransform, wrap} from "framer-motion";
 
 import dd2Img from "../../public/img/cars/dd2.png"
 import clioImg from "../../public/img/cars/Clio.png"
 import supraImg from "../../public/img/cars/supra.png"
 import todoImg from "../../public/img/cars/todo.png"
 
+const xOffset = 100;
 const cars = [{
     imgSrc: dd2Img.src,
     name: 'dd2 rotax',
@@ -163,6 +164,32 @@ export default function CarsSection() {
             setCurrent(current + 1);
         }
     }
+    const hasPaginated = useRef(false);
+
+    // @ts-ignore
+    function detectPaginationGesture(e, { offset }) {
+        if (hasPaginated.current) return;
+        let newPage = current;
+        const threshold = xOffset / 2;
+
+        if (offset.x < -threshold) {
+            // If user is dragging left, go forward a page
+            newPage = current + 1;
+        } else if (offset.x > threshold) {
+            // Else if the user is dragging right,
+            // go backwards a page
+            newPage = current - 1;
+        }
+
+        if (newPage !== current) {
+            hasPaginated.current = true;
+            // Wrap the page index to within the
+            // permitted page range
+            newPage = wrap(0, cars.length, newPage);
+            // @ts-ignore
+            setCurrent(newPage, offset.x < 0 ? 1 : -1);
+        }
+    }
     return (
         <MotionConfig transition={{
             duration: 0.5, ease: [0.32, 0.72, 0, 1]
@@ -170,8 +197,11 @@ export default function CarsSection() {
             <div id="our-cars-section" className="overflow-x-hidden">
                 <div className="container mx-auto py-16 mt-32 relative ">
                     <CarsCaption/>
-                    <div className="flex flex-col relative ">
-                        <div className="flex flex-nowrap container relative">
+                    <div className="flex flex-col relative "                     >
+                        <motion.div onDrag={detectPaginationGesture}
+                                    onDragStart={() => (hasPaginated.current = false)}
+                                    onDragEnd={() => (hasPaginated.current = true)}
+                                    drag={"x"} dragConstraints={{left:0, right: 0}} className="flex flex-nowrap container relative">
                             <div className="absolute h-full left-0 right-0 flex items-center justify-between z-10">
                                 {
                                     current > 0 ? <button className="w-4 md:w-8 hover:-translate-y-1 transition"
@@ -201,9 +231,9 @@ export default function CarsSection() {
 
                                     <motion.div
                                         key={idx}
-                                        animate={{x: `calc(-${current * 100}% - ${current}rem)`}}
+                                        animate={{x: `calc(-${current * 100}%)`}}
                                         className="flex shrink-0 justify-center w-full relative ">
-                                        <motion.img src={car.imgSrc} className="max-w-3xl" alt="car" animate={{
+                                        <motion.img src={car.imgSrc} className="w-2/3 lg:max-w-3xl" alt="car" animate={{
                                             // scale: current === idx ? 1 : 0.9,
                                             scale: current === idx ? 1 : 0.90,
                                             opacity: current === idx ? 1 : 0.4,
@@ -211,7 +241,7 @@ export default function CarsSection() {
                                     </motion.div>
                                 ))
                             }
-                        </div>
+                        </motion.div>
                         <div className="flex flex-col md:flex-row items-start gap-6 lg:gap-60">
                             <div
                                 className="w-full">
@@ -238,7 +268,7 @@ export default function CarsSection() {
                                         </div> : ''
                                     }
                                 </div>
-                                <div className="py-6 body flex gap-3">
+                                <div className="py-6 body grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-3">
                                     {
                                         [...cars[current].settings].map((setting, idx) => (
                                             <div

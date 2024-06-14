@@ -118,13 +118,13 @@ export default function TeamSection() {
                             }
                         </div>
                         <div className="flex flex-col gap-10 justify-center -mt-10">
-                            <motion.div className="relative flex items-center justify-center h-[500px]">
+                            <motion.div className="relative flex items-center justify-center h-[400px] md:h-[500px] lg:h-[610px] w-full">
                                 {
                                     [...teamList].map((item, index) => (
                                         <motion.div animate={{
                                             opacity: current === index ? 1 : 0,
-                                        }} className="absolute flex "  key={index}>
-                                            <Image className="w-[546px] " src={item.imgSrc} width={728} height={666}
+                                        }} className="absolute flex flex-col object-cover md:flex-row"  key={index}>
+                                            <Image className="w-full md:w-[546px] " src={item.imgSrc} width={728} height={666}
                                                    alt="vasily-vladykin"/>
                                             <motion.div
                                                 transition={{
@@ -135,7 +135,7 @@ export default function TeamSection() {
                                                     opacity: current === index ? 1 : 0,
                                                     translateX: current === index ? 0 : 300
                                                 }}
-                                                className="flex flex-col gap-4 w-full lg:max-w-md justify-end px-4">
+                                                className="hidden md:flex flex-col gap-4 w-full xl:max-w-md justify-end px-4">
                                                 <div className="text-lg font-bold">{item.description}</div>
                                                 <div className="flex flex-col gap-2">
                                                     {
@@ -149,7 +149,7 @@ export default function TeamSection() {
                                     ))
                                 }
                             </motion.div>
-                            <div className="flex flex-row mx-auto justify-between gap-8 w-max relative px-16">
+                            <div className="flex flex-row mx-auto justify-between gap-4 lg:gap-8 w-full lg:w-max relative px-16">
                                 <div className="absolute h-full left-0 right-0 flex items-center justify-between z-10">
                                     <button className="w-4 md:w-8 hover:-translate-y-1 transition"
                                             onClick={onPrevClick}>
