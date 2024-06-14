@@ -5,7 +5,7 @@ import historyImage2 from "@/public/img/history/history-img-2.png"
 
 export default function HistorySection() {
     return (
-        <div className="overflow-x-hidden">
+        <div id="racing-academy-section" className="overflow-x-hidden">
             <div className="container  mx-auto py-16 md:py-32">
                 <div className="flex flex-col">
                     <span className="h2 !leading-tight">From Karting</span>

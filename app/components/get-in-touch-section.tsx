@@ -2,7 +2,7 @@ import Image from "next/image";
 import logoImage from "@/public/img/logo-2.png";
 export default function GetInTouchSection() {
     return (
-        <div className="bg-getintouch-pattern bg-cover bg-no-repeat bg-bottom pt-64 pb-[560px] overflow-hidden">
+        <div id="contacts-section" className="bg-getintouch-pattern bg-cover bg-no-repeat bg-bottom pt-64 pb-[560px] overflow-hidden">
             <div className="container mx-auto flex flex-col items-center text-white">
                 <Image src={logoImage.src} width={503} height={199} className="mb-8" alt="logo"/>
                 <h2 className="h2 !leading-normal">GET IN TOUCH!</h2>

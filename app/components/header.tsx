@@ -6,21 +6,21 @@ export const Header = () => {
             <div className="hidden lg:block absolute left-0 top-0 w-full z-10">
                 <header className="bg-white py-6 relative">
                     <nav className="text-xs xl:text-base container mx-auto class flex items-center justify-center gap-6">
-                        <a href="#"
+                        <a href="/#racing-team-section"
                            className="whitespace-nowrap text-center font-bold hover:text-accent uppercase flex-1 transition-colors ease-in-out duration-300">Racing
                             team</a>
-                        <a href="#"
+                        <a href="/#racing-academy-section"
                            className="whitespace-nowrap text-center font-bold hover:text-accent uppercase flex-1 transition-colors ease-in-out duration-300">Racing
                             Academy</a>
-                        <a href="#"
+                        <a href="/#our-cars-section"
                            className="whitespace-nowrap text-center font-bold hover:text-accent uppercase flex-1 transition-colors ease-in-out duration-300">Our
                             Cars</a>
                         <Image src={logo.src} width={158} height={63} alt="logo" className="justify-self-center flex-1"></Image>
-                        <a href="#"
+                        <a href="/#achievements-section"
                            className="text-center font-bold hover:text-accent uppercase flex-1 transition-colors ease-in-out duration-300">Achievements</a>
-                        <a href="#"
+                        <a href="/#team-section"
                            className="text-center font-bold hover:text-accent uppercase flex-1 transition-colors ease-in-out duration-300">Team</a>
-                        <a href="#"
+                        <a href="/#contacts-section"
                            className="text-center font-bold hover:text-accent uppercase flex-1 transition-colors ease-in-out duration-300">Contacts</a>
                     </nav>
                     <div

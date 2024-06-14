@@ -1,7 +1,7 @@
 "use client";
 
 import {useRef, useState} from "react";
-import {motion, useScroll, useTransform} from "framer-motion";
+import {motion, MotionConfig, useScroll, useTransform} from "framer-motion";
 
 import dd2Img from "../../public/img/cars/dd2.png"
 import clioImg from "../../public/img/cars/Clio.png"
@@ -11,9 +11,12 @@ import todoImg from "../../public/img/cars/todo.png"
 const cars = [{
     imgSrc: dd2Img.src,
     name: 'dd2 rotax',
-    descriptionTitle: 'Maximum Performance/Power',
-    description: '34 hp at 12,000 rpm',
+    trophies: [],
     settings: [
+        {
+            title: 'Power',
+            value: '34 hp at 12,000 rpm',
+        },
         {
             title: 'Weight',
             value: '95 kg',
@@ -31,9 +34,12 @@ const cars = [{
 }, {
     imgSrc: todoImg.src,
     name: 'Renault Megane R.S.',
-    descriptionTitle: 'Maximum Performance/Power',
-    description: '250 hp at 6 500 rpm',
+    trophies: [],
     settings: [
+        {
+            title: 'Power',
+            value: '250 hp at 6 500 rpm',
+        },
         {
             title: 'Weight',
             value: '1 200 kg',
@@ -47,12 +53,15 @@ const cars = [{
             value: '5 speed manual gearbox, front-wheel-drive, rollcage, racing seats',
         }
     ]
-},{
+}, {
     imgSrc: clioImg.src,
     name: 'Renault Clio R.S. V (Cup)',
-    descriptionTitle: 'Maximum Performance/Power',
-    description: '200 hp at 6 500 rpm',
+    trophies: [],
     settings: [
+        {
+            title: 'Power',
+            value: '200 hp at 6 500 rpm',
+        },
         {
             title: 'Weight',
             value: '1 030 kg',
@@ -70,16 +79,14 @@ const cars = [{
     {
         imgSrc: supraImg.src,
         name: 'Toyota Supra GT4 Evo',
-        descriptionTitle: 'Maximum Performance/Power',
-        description: '430+ hp at 6 500 rpm',
+        trophies: [
+            'The winner of 24H Dubai GT4 Class, the first-ever winning Supra GT4 Evo in 24H Dubai GT4 Class',
+            'Multiple Gulf ProCar 23-24 victories in the GT4 Class'
+        ],
         settings: [
             {
-                title: 'Trophies',
-                value: 'The winner of 24H Dubai GT4 Class, the first-ever winning Supra GT4 Evo in 24H Dubai GT4 Class',
-            },
-            {
-                title: '',
-                value: 'Multiple Gulf ProCar 23-24 victories in the GT4 Class ',
+                title: 'Power',
+                value: '430+ hp at 6 500 rpm',
             },
             {
                 title: 'Weight',
@@ -98,9 +105,12 @@ const cars = [{
     {
         imgSrc: todoImg.src,
         name: 'Radical SR3 XXR/XX',
-        descriptionTitle: 'Maximum Performance/Power',
-        description: '232 hp at 6 500 rpm',
+        trophies: [],
         settings: [
+            {
+                title: 'Power',
+                value: '232 hp at 6 500 rpm',
+            },
             {
                 title: 'Weight',
                 value: '610 kg',
@@ -118,9 +128,12 @@ const cars = [{
     {
         imgSrc: todoImg.src,
         name: 'Audi R8 LMS GT3 Evo II',
-        descriptionTitle: 'Maximum Performance/Power',
-        description: '585 hp at 6 500 rpm',
+        trophies: [],
         settings: [
+            {
+                title: 'Power',
+                value: '585 hp at 6 500 rpm',
+            },
             {
                 title: 'Weight',
                 value: '1 235 kg',
@@ -151,73 +164,98 @@ export default function CarsSection() {
         }
     }
     return (
-        <div className="overflow-x-hidden">
-            <div className="container mx-auto py-16 mt-32 relative ">
-                <CarsCaption/>
-                <div className="flex flex-col relative ">
-                    <div className="flex flex-nowrap container relative">
-                        <div className="absolute h-full left-0 right-0 flex items-center justify-between z-10">
-                            {
-                                current > 0 ? <button className="w-4 md:w-8 hover:-translate-y-1 transition"
-                                                      onClick={onPrevClick}>
-                                    <svg viewBox="0 0 35 75" fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M31.5 72.3428L4.5 36.3428L31.5 2.34277" stroke="currentColor"
-                                              strokeWidth="7"/>
-                                    </svg>
-                                </button> : <div></div>
-                            }
-                            {
-                                current < cars.length - 1 ?
-                                    <button className="w-4 md:w-8 hover:-translate-y-1 transition"
-                                            onClick={onNextClick}>
+        <MotionConfig transition={{
+            duration: 0.5, ease: [0.32, 0.72, 0, 1]
+        }}>
+            <div id="our-cars-section" className="overflow-x-hidden">
+                <div className="container mx-auto py-16 mt-32 relative ">
+                    <CarsCaption/>
+                    <div className="flex flex-col relative ">
+                        <div className="flex flex-nowrap container relative">
+                            <div className="absolute h-full left-0 right-0 flex items-center justify-between z-10">
+                                {
+                                    current > 0 ? <button className="w-4 md:w-8 hover:-translate-y-1 transition"
+                                                          onClick={onPrevClick}>
                                         <svg viewBox="0 0 35 75" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.5 72.3428L30.5 36.3428L3.5 2.34277" stroke="currentColor"
+                                            <path d="M31.5 72.3428L4.5 36.3428L31.5 2.34277" stroke="currentColor"
                                                   strokeWidth="7"/>
                                         </svg>
                                     </button> : <div></div>
-                            }
+                                }
+                                {
+                                    current < cars.length - 1 ?
+                                        <button className="w-4 md:w-8 hover:-translate-y-1 transition"
+                                                onClick={onNextClick}>
+                                            <svg viewBox="0 0 35 75" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3.5 72.3428L30.5 36.3428L3.5 2.34277" stroke="currentColor"
+                                                      strokeWidth="7"/>
+                                            </svg>
+                                        </button> : <div></div>
+                                }
 
-                        </div>
-                        {
-                            [...cars].map((car, idx) => (
-
-                                <motion.div
-                                    key={idx}
-                                    animate={{x: `calc(-${current * 100}% - ${current}rem)`}}
-                                    className="flex shrink-0 justify-center w-full relative ">
-                                    <motion.img src={car.imgSrc} className="max-w-3xl" alt="car" animate={{
-                                        // scale: current === idx ? 1 : 0.9,
-                                        scale: current === idx ? 1 : 0.90,
-                                        opacity: current === idx ? 1 : 0.4,
-                                    }}/>
-                                </motion.div>
-                            ))
-                        }
-                    </div>
-                    <div className="flex flex-col md:flex-row items-start gap-6 lg:gap-60">
-                        <div className="flex flex-col gap-3 md:w-1/2 flex-1">
+                            </div>
                             {
-                                [...cars[current].settings].map((setting, idx) => (
-                                    <div className="flex flex-col gap-1" key={idx}>
-                                        <span className="text-lg md:body font-bold">{setting.title}</span>
-                                        <span className="text-small md:body">{setting.value}</span>
-                                    </div>
+                                [...cars].map((car, idx) => (
+
+                                    <motion.div
+                                        key={idx}
+                                        animate={{x: `calc(-${current * 100}% - ${current}rem)`}}
+                                        className="flex shrink-0 justify-center w-full relative ">
+                                        <motion.img src={car.imgSrc} className="max-w-3xl" alt="car" animate={{
+                                            // scale: current === idx ? 1 : 0.9,
+                                            scale: current === idx ? 1 : 0.90,
+                                            opacity: current === idx ? 1 : 0.4,
+                                        }}/>
+                                    </motion.div>
                                 ))
                             }
                         </div>
-                        <div className="bg-accent parallelogram -order-1 md:order-1 px-[20%] py-4 md:px-[10%] text-white flex-1 w-full md:w-1/2">
-                            <h3 className="h5">{cars[current].name}</h3>
-                            <div className="border-t-[5px] border-white py-6 body flex flex-col gap-3">
-                                <span className="font-bold whitespace-nowrap">{cars[current].descriptionTitle}</span>
-                                <span>{cars[current].description}</span>
+                        <div className="flex flex-col md:flex-row items-start gap-6 lg:gap-60">
+                            <div
+                                className="w-full">
+                                <div className="flex items-center justify-center gap-2">
+                                    <h3 className="h4 border-b-[5px] border-accent">{cars[current].name}</h3>
+                                    {
+                                        cars[current].trophies.length ? <div className="flex gap-1">
+                                            {
+                                                [...cars[current].trophies].map((trophy, idx)  => (
+                                                    <div key={idx} className="relative group">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                             className="size-10 text-accent" viewBox="0 0 512 512">
+                                                            <path fill="currentColor"
+                                                                  d="M392 105c.9-27 .2-56 .1-57H119.3c0 1-.8 30 .1 57H48c0 68 9.9 102.3 21 126.7S95.4 277 127.7 302c30.1 23.3 95.5 53.6 104.3 57.6v28.3c-4.6 10-23.5 28.2-83.3 28.2H128v48h256v-48h-25.7c-60.7 0-75-19.1-78.3-28.2v-28.3c9.3-4.6 80.9-40.3 104.4-57.5 25.2-18.4 50.9-51.5 58.7-70.3S464 167 464 105h-72zM109.6 211.9c-8.8-18.2-14-37.9-15.7-61.9h28.7c.7 6 1.4 11.3 2.3 16.3 6.6 39.2 14.8 70.2 25.7 96.5-17.3-13.5-31.3-30.8-41-50.9zm292.8 0c-9.9 20.3-24 37.7-41.6 51.3 11-26.2 19-56.8 25.8-96.9.8-5 1.6-10.3 2.3-16.3h29.3c-1.8 24-6.9 43.7-15.8 61.9z"/>
+                                                        </svg>
+                                                        <div className="absolute min-w-64 z-20 bg-white top-full left-0 shadow p-4 rounded-2xl hidden group-hover:block">
+                                                            {
+                                                                trophy
+                                                            }
+                                                        </div>
+                                                    </div>
+                                                ))
+                                            }
+                                        </div> : ''
+                                    }
+                                </div>
+                                <div className="py-6 body flex gap-3">
+                                    {
+                                        [...cars[current].settings].map((setting, idx) => (
+                                            <div
+                                                className="flex flex-1 flex-col gap-1 parallelogram-md px-12 py-6 bg-accent text-white"
+                                                key={idx}>
+                                                <span className="text-lg md:body font-bold">{setting.title}</span>
+                                                <span className="text-small md:body">{setting.value}</span>
+                                            </div>
+                                        ))
+                                    }
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </MotionConfig>
     )
 }
 
@@ -230,8 +268,9 @@ const CarsCaption = () => {
     const y = useTransform(scrollYProgress, [0, 1], ["0", "10%"])
 
     return (
-        <motion.svg ref={element} className="absolute left-0 right-0 w-full" viewBox="0 0 1396 200" fill="none" style={{top:y}}
-             xmlns="http://www.w3.org/2000/svg">
+        <motion.svg ref={element} className="absolute left-0 right-0 w-full" viewBox="0 0 1396 200" fill="none"
+                    style={{top: y}}
+                    xmlns="http://www.w3.org/2000/svg">
             <path fillRule="evenodd" clipRule="evenodd"
                   d="M1233.15 155.459C1232.49 155.423 1231.82 155.387 1231.15 155.35V191.8C1250.77 193.42 1269.76 194.68 1288.12 195.58L1312.96 196.66C1323.22 197.02 1332.94 197.2 1342.12 197.2C1359.76 197.2 1372.72 193.06 1381 184.78C1389.28 176.5 1393.42 163.54 1393.42 145.9V132.4C1393.42 114.76 1389.28 101.8 1381 93.52C1372.72 85.24 1359.76 81.1 1342.12 81.1H1293.52C1282.72 81.1 1277.32 75.7 1277.32 64.9V59.5C1277.32 48.7 1282.72 43.3 1293.52 43.3H1377.49V5.5H1282.72C1263.82 5.5 1250.05 9.82 1241.41 18.46C1232.95 26.92 1228.72 40.6 1228.72 59.5V67.6C1228.72 86.5 1232.95 100.27 1241.41 108.91C1250.05 117.37 1263.82 121.6 1282.72 121.6H1344.82V145.9C1344.82 150.04 1343.56 153.37 1341.04 155.89C1338.7 158.23 1335.46 159.4 1331.32 159.4C1314.1 159.4 1281.38 158.086 1233.15 155.459ZM1342.82 123.6V145.9C1342.82 149.602 1341.71 152.392 1339.63 154.476C1337.75 156.352 1335.07 157.4 1331.32 157.4C1313.93 157.4 1280.59 156.053 1231.26 153.353L1229.15 153.238V193.642L1230.99 193.793C1250.63 195.415 1269.64 196.676 1288.02 197.578L1312.88 198.658L1312.89 198.659C1323.17 199.02 1332.92 199.2 1342.12 199.2C1360.03 199.2 1373.61 195.002 1382.42 186.194C1391.22 177.386 1395.42 163.805 1395.42 145.9V132.4C1395.42 114.495 1391.22 100.914 1382.42 92.1058C1373.61 83.2977 1360.03 79.1 1342.12 79.1H1293.52C1288.43 79.1 1284.98 77.8284 1282.79 75.6358C1280.59 73.4432 1279.32 69.9917 1279.32 64.9V59.5C1279.32 54.4083 1280.59 50.9569 1282.79 48.7642C1284.98 46.5716 1288.43 45.3 1293.52 45.3H1379.49V3.5H1282.72C1263.58 3.5 1249.17 7.86929 1240 17.0458C1231 26.0488 1226.72 40.3671 1226.72 59.5V67.6C1226.72 86.7378 1231 101.132 1239.98 110.309L1240 110.324L1240.01 110.339C1249.19 119.325 1263.58 123.6 1282.72 123.6H1342.82Z"
                   fill="#DA0A0A"/>

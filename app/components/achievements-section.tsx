@@ -57,7 +57,7 @@ export default function AchievementsSection() {
     const y = useTransform(scrollYProgress, [0, 1], ["-40%", "10%"])
     const bannerClassName = 'group relative h-[250px] flex flex-col items-center justify-center bg-center bg-cover p-10  overflow-hidden'
     return (
-        <section ref={sectionRef} className="bg-achievements-pattern bg-cover py-16 md:py-32 ">
+        <section id="achievements-section" ref={sectionRef}  className="bg-achievements-pattern bg-cover py-16 md:py-32 ">
             <div className="container mx-auto">
                 <div className="mb-10 text-center md:text-left">
                     <h2 className="h2">Achievements</h2>

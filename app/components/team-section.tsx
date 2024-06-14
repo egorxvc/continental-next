@@ -69,12 +69,29 @@ const teamList = [
 
 export default function TeamSection() {
     const [current, setCurrent] = useState(0);
+
+    const onPrevClick = () => {
+        if (current > 0) {
+            setCurrent(current - 1);
+        } else {
+            setCurrent(teamList.length - 1)
+        }
+    }
+
+    const onNextClick = () => {
+        if (current < teamList.length - 1) {
+            setCurrent(current + 1);
+        } else {
+            setCurrent(0)
+        }
+    }
+
     return (
         <>
             <MotionConfig transition={{
                 duration: 0.5, ease: [0.32, 0.72, 0, 1]
             }}>
-                <section className="flex flex-col relative py-16 md:py-32 mt-16 md:mt-32">
+                <section id="team-section" className="flex flex-col relative py-16 md:py-32 mt-16 md:mt-32">
                     <TeamCaption/>
                     <div className="container pt-32 mx-auto">
                         <div className="relative flex justify-center h-[120px] md:h-[200px]">
@@ -100,11 +117,62 @@ export default function TeamSection() {
                                 ))
                             }
                         </div>
-                        <div className="flex flex-col md:flex-row gap-10 justify-center -mt-10">
-                            <div className="flex flex-row md:flex-col justify-between gap-4 md:h-[666px] relative">
+                        <div className="flex flex-col gap-10 justify-center -mt-10">
+                            <motion.div className="relative flex items-center justify-center h-[500px]">
                                 {
                                     [...teamList].map((item, index) => (
-                                        <motion.button  key={index} className="bg-none border-none relative"
+                                        <motion.div animate={{
+                                            opacity: current === index ? 1 : 0,
+                                        }} className="absolute flex "  key={index}>
+                                            <Image className="w-[546px] " src={item.imgSrc} width={728} height={666}
+                                                   alt="vasily-vladykin"/>
+                                            <motion.div
+                                                transition={{
+                                                    delay: 0.3,
+                                                    ease: [0.32, 0.72, 0, 1]
+                                                }}
+                                                animate={{
+                                                    opacity: current === index ? 1 : 0,
+                                                    translateX: current === index ? 0 : 300
+                                                }}
+                                                className="flex flex-col gap-4 w-full lg:max-w-md justify-end px-4">
+                                                <div className="text-lg font-bold">{item.description}</div>
+                                                <div className="flex flex-col gap-2">
+                                                    {
+                                                        item.achievements.map((achievement, index) => (
+                                                            <div key={index} className="text-md">{achievement}</div>
+                                                        ))
+                                                    }
+                                                </div>
+                                            </motion.div>
+                                        </motion.div>
+                                    ))
+                                }
+                            </motion.div>
+                            <div className="flex flex-row mx-auto justify-between gap-8 w-max relative px-16">
+                                <div className="absolute h-full left-0 right-0 flex items-center justify-between z-10">
+                                    <button className="w-4 md:w-8 hover:-translate-y-1 transition"
+                                            onClick={onPrevClick}>
+                                        <svg viewBox="0 0 35 75" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M31.5 72.3428L4.5 36.3428L31.5 2.34277" stroke="currentColor"
+                                                  strokeWidth="7"/>
+                                        </svg>
+                                    </button>
+                                    <button className="w-4 md:w-8 hover:-translate-y-1 transition"
+                                            onClick={onNextClick}>
+                                        <svg viewBox="0 0 35 75" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3.5 72.3428L30.5 36.3428L3.5 2.34277"
+                                                  stroke="currentColor"
+                                                  strokeWidth="7"/>
+                                        </svg>
+                                    </button>
+
+                                </div>
+                                {
+                                    [...teamList].map((item, index) => (
+                                        <motion.button key={index} className="bg-none border-none relative"
                                                        onClick={() => setCurrent(index)}>
                                             <motion.div
                                                 animate={{
@@ -117,37 +185,6 @@ export default function TeamSection() {
                                     ))
                                 }
                             </div>
-
-                            <motion.div className="relative md:w-[728px] h-[770px] md:h-[666px]">
-                                {
-                                    [...teamList].map((item, index) => (
-                                        <motion.div animate={{
-                                            opacity: current === index ? 1 : 0,
-                                        }} className="absolute " key={index}>
-                                            <Image src={item.imgSrc} width={728} height={666}
-                                                   alt="vasily-vladykin"/>
-                                            <motion.div
-                                                transition={{
-                                                   delay: 0.3
-                                                }}
-                                                animate={{
-                                                    opacity: current === index ? 1 : 0,
-                                                    translateX: current === index ? 0 : 300
-                                                }}
-                                                className="flex flex-col gap-4 w-full lg:max-w-md bg-black text-white lg:absolute top-2/3 -right-12 p-6">
-                                                <div className="text-lg font-bold">{item.description}</div>
-                                                <div className="flex flex-col gap-2">
-                                                    {
-                                                        item.achievements.map((achievement, index) => (
-                                                        <div key={index} className="text-md">{achievement}</div>
-                                                    ))
-                                                    }
-                                                </div>
-                                            </motion.div>
-                                        </motion.div>
-                                    ))
-                                }
-                            </motion.div>
                         </div>
                     </div>
                 </section>
