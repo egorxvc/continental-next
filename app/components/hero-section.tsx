@@ -34,9 +34,9 @@ export const HeroSection = () => {
                 variants={heroTriangle}
                 className="triangle w-full absolute left-0 top-0 -bottom-2/3 mix-blend-multiply bg-accent hidden md:block"></motion.div>
             <motion.div variants={staggerChildren} className="container flex flex-col relative mx-auto text-white">
-                <motion.span className="h1 !leading-[1] h-[36px] md:h-[110px] inline-block overflow-hidden">
+                <motion.span className="screen !leading-[1] h-[60px] md:h-[110px] inline-block overflow-hidden">
                     <AnimatedWords title="One team"/></motion.span>
-                <motion.span className="h1 !leading-[1] h-[36px] md:h-[110px] stroke-text stroke-text-white">
+                <motion.span className="screen !leading-[1] h-[60px] md:h-[110px] stroke-text stroke-text-white">
                     <AnimatedWords title="One dream"/></motion.span>
                 <motion.div variants={riseWithFade} className="max-w-3xl mt-8">
                     <p className="caption bg-black inline">We unite under a single vision to push the

@@ -35,6 +35,10 @@
     clip-path: polygon(0 0, 0% 100%, 100% 100%);
 }
 
+.screen {
+    @apply font-mono font-medium text-6xl md:text-8xl uppercase
+}
+
 .h1 {
     @apply font-mono font-medium text-4xl md:text-8xl uppercase
 }

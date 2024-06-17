@@ -47,12 +47,7 @@ export default function HistorySection() {
                         <div className="bg-black text-white p-6 mb-16 body">
                             <FadeInScroll>
                                 <p>
-                                    Whether you&apos;re just starting your journey or looking to push your racing career to
-                                    the next
-                                    level,
-                                    our Academy is dedicated to helping you achieve your goals with expert guidance and
-                                    state-of-the-art
-                                    facilities/modern technologies.
+                                    Whether you&apos;re just starting your journey or looking to push your racing career to the next level, our extensive experience will help you quickly achieve the desired results according to your individual needs and characteristics.
                                 </p>
                             </FadeInScroll>
 

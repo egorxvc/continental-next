@@ -133,22 +133,22 @@ export default function PricesSection() {
         <>
             <div className="hidden xl:block container mx-auto py-16 md:py-32">
                 <h2 className="h2 text-center mb-12">Prices</h2>
-            <div className="flex">
+            <div className="flex gap-4">
                 {
                     [...prices].map((price, idx) => (
                         <div
                             key={idx}
-                            className="parallelogram-md flex-1 bg-gray-500 hover:bg-accent transition text-white container text-whiteshadow p-8 px-16">
+                            className="flex-1 bg-white border-accent border-[1px] hover:bg-accent transition hover:text-white container text-whiteshadow p-8 px-8 group">
                             <div className="flex flex-col justify-between h-full">
-                                <h3 className="text-xl font-mono bold">{price.title}</h3>
-                                <div className="border-t-[2px] border-white flex py-4 small flex-col gap-2">
+                                <h3 className="text-lg 2xl:text-xl font-mono bold">{price.title}</h3>
+                                <div className="border-t-[2px] border-black group-hover:border-white transition-[border-color] flex py-4 text-sm flex-col gap-2">
                                     {
                                         [...price.carList].map((car, _) => (
                                             <div key={car.title} className="flex flex-col gap-1 h-full">
                                                 {car.title && <span className="font-bold">{car.title}</span>}
-                                                <div className="flex">
+                                                <div className="grid grid-cols-2 gap-2">
                                                     <div
-                                                        className="flex flex-col pr-4 border-r-2 border-white max-w-screen-2xl">
+                                                        className="flex flex-col border-r-2 border-black transition-[border-color] group-hover:border-white  max-w-screen-2xl">
                                                         {
                                                             [...car.list].map((item, _) => (
                                                                 <span key={item.name}>
@@ -157,7 +157,7 @@ export default function PricesSection() {
                                                             ))
                                                         }
                                                     </div>
-                                                    <div className="flex flex-col pl-4">
+                                                    <div className="flex flex-col">
                                                         {
                                                             [...car.list].map((item, _) => (
                                                                 <span key={item.price}>{item.price}</span>
@@ -170,7 +170,7 @@ export default function PricesSection() {
                                     }
                                 </div>
                                 <div
-                                    className="font-light italic text-sm mt-auto">{price.small}</div>
+                                    className="font-light italic text-sm mt-auto small">{price.small}</div>
                             </div>
                         </div>
                     ))
