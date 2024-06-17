@@ -131,9 +131,9 @@ export default function PricesSection() {
 
     return (
         <>
-            <div className="container mx-auto py-16 md:py-32">
+            <div className="hidden xl:block container mx-auto py-16 md:py-32">
                 <h2 className="h2 text-center mb-12">Prices</h2>
-            <div className="hidden lg:flex">
+            <div className="flex">
                 {
                     [...prices].map((price, idx) => (
                         <div
@@ -141,7 +141,7 @@ export default function PricesSection() {
                             className="parallelogram-md flex-1 bg-gray-500 hover:bg-accent transition text-white container text-whiteshadow p-8 px-16">
                             <div className="flex flex-col justify-between h-full">
                                 <h3 className="text-xl font-mono bold">{price.title}</h3>
-                                <div className="border-t-[2px] border-white flex py-4 text-md flex-col gap-2">
+                                <div className="border-t-[2px] border-white flex py-4 small flex-col gap-2">
                                     {
                                         [...price.carList].map((car, _) => (
                                             <div key={car.title} className="flex flex-col gap-1 h-full">
@@ -178,7 +178,7 @@ export default function PricesSection() {
             </div>
 
             </div>
-            <div className="overflow-x-hidden py-16 md:py-32 lg:hidden">
+            <div className="overflow-x-hidden py-16 md:py-32 xl:hidden">
                 <MotionConfig transition={{
                     duration: 0.5, ease: [0.32, 0.72, 0, 1]
                 }}>
@@ -220,21 +220,20 @@ export default function PricesSection() {
                         </div>
                         <motion.div
                             animate={{x: `calc(-${current * 100}% - ${current}rem)`}}
-                            className="flex flex-nowrap gap-4">
+                            className="flex flex-nowrap gap-4 items-start">
                             {
                                 [...prices].map((price, idx) => (
                                     <motion.div
-                                        className="parallelogram-md w-full bg-accent text-white container shrink-0 flex justify-center items-center text-whiteshadow p-8"
+                                        className="parallelogram-md min-w-[100dvw] bg-accent text-white container flex justify-center items-center text-whiteshadow px-[20%] py-12"
                                         key={price.title}
                                         animate={{
                                             // scale: current === idx ? 1 : 0.9,
-                                            y: current === idx ? '0' : '80px',
                                             x: current === idx ? '0' : '0',
                                             opacity: current === idx ? 1 : 0.5,
                                             backgroundColor: current === idx ? '#DA0A0A' : '#000000'
                                         }}
                                     >
-                                        <div className="flex flex-col items-start">
+                                        <div className="flex flex-col items-start w-full">
                                             <h3 className="h4">{price.title}</h3>
                                             <div className="border-t-[5px] border-white flex py-6 body flex-col gap-6">
                                                 {
