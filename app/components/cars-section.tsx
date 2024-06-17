@@ -198,7 +198,7 @@ export default function CarsSection() {
             duration: 0.5, ease: [0.32, 0.72, 0, 1]
         }}>
             <div id="our-cars-section" className="overflow-x-hidden">
-                <div className="container mx-auto py-16 mt-32 relative ">
+                <div className="container mx-auto py-16 mt-0 md:mt-16 lg:mt-32 relative ">
                     <CarsCaption/>
                     <div className="flex flex-col relative "                     >
                         <motion.div onDrag={detectPaginationGesture}
@@ -265,7 +265,7 @@ export default function CarsSection() {
 
                                     {
                                         cars[current].trophies.length ?
-                                            <div className="flex flex-1 flex-col gap-1 col-span-2">
+                                            <div className="flex flex-1 flex-col gap-1 md:col-span-2">
                                                 <span className="body md:caption font-bold">Trophies</span>
                                                 <div className="flex flex-col gap-0.5">
                                                     {

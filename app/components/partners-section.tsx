@@ -46,7 +46,7 @@ export default function PartnersSection() {
                     our <span className="text-accent">partners</span>
                 </h2>
             </div>
-            <div className="relative h-[200px]">
+            <div className="relative h-[125px] md:h-[200px]">
                 <motion.div className="absolute left-0 flex gap-8" ref={ref} style={{
                     x: xTranslation,
                 }}>
@@ -63,7 +63,7 @@ export default function PartnersSection() {
 
 const ImageCard = ({image}: { image: StaticImageData})  =>  {
     return (
-        <div className="relative overflow-hidden h-[200px] min-w-[200px] flex justify-center">
+        <div className="relative overflow-hidden h-[125px] md:h-[200px]  min-w-[125px] md:min-w-[200px] flex justify-center">
             <Image src={image} fill alt="partner1"
                    className="object-contain "/>
         </div>

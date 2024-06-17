@@ -16,15 +16,15 @@ export default function SocialsSection() {
                         <Image src={socialImage1.src} width={408} height={562}
                                className="shadow rounded-2xl object-contain" alt="social1"/>
                     </div>
-                    <div className="flex items-center justify-center">
+                    <div className="hidden md:flex items-center justify-center">
                         <Image src={socialImage2.src} width={408} height={562}
                                className="shadow rounded-2xl object-contain" alt="social2"/>
                     </div>
-                    <div className="flex items-center justify-center">
+                    <div className="hidden md:flex items-center justify-center">
                         <Image src={socialImage3.src} width={408} height={562}
                                className="shadow rounded-2xl object-contain" alt="social3"/>
                     </div>
-                    <div className="flex items-center justify-center">
+                    <div className="hidden md:flex items-center justify-center">
                         <Image src={socialImage3.src} width={408} height={562}
                                className="shadow rounded-2xl object-contain" alt="social3"/>
                     </div>

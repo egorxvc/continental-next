@@ -45,7 +45,7 @@ const achievements = [
         description: 'Nordberg has become our technical partner for the 2023 - 2024 season',
         imgSrc: nordbergImage,
     }
-]
+].reverse();
 
 export default function AchievementsSection() {
     const sectionRef = useRef(null);
@@ -55,10 +55,6 @@ export default function AchievementsSection() {
         offset: ['start end', 'end start']
     })
 
-    function getAchievements() {
-        return isViewMore ? achievements : achievements.slice(0,  4);
-    }
-
     const y = useTransform(scrollYProgress, [0, 1], ["-40%", "10%"])
     const bannerClassName = 'group relative h-[400px] flex flex-col items-center justify-center bg-center bg-cover p-10  overflow-hidden'
     return (
@@ -66,8 +62,7 @@ export default function AchievementsSection() {
             <div className="container mx-auto">
                 <div className="mb-10 text-center md:text-left">
                     <h2 className="h2">Achievements</h2>
-                    <span className="h4 stroke-text ">the moments
-we are proud of</span>
+                    <span className="h4 stroke-text ">the moments we are&nbsp;proud&nbsp;of</span>
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-3 h-full gap-2 mb-6">
                     {(isViewMore ? achievements : achievements.slice(0,  4)).map((achievement, index) => (

@@ -3,8 +3,8 @@ import logoImage from "@/public/img/logo-footer.png";
 
 export default function Footer() {
     return (
-        <footer className="bg-black bg-top text-white bg-contain bg-no-repeat pt-[300px] pb-12 relative">
-            <div className="bg-header-pattern absolute -top-2 w-full left-0 h-[300px] bg-contain bg-no-repeat"></div>
+        <footer className="bg-black bg-top text-white bg-contain bg-no-repeat pt-[100px] md:pt-[300px] pb-12 relative">
+            <div className="bg-header-pattern absolute -top-2 w-full left-0 h-[100px] md:h-[300px] bg-contain bg-no-repeat"></div>
             <div className="container mx-auto">
                 <div className="flex flex-col md:flex-row gap-6 justify-between mb-12 items-center md:items-start">
                     <Image src={logoImage.src} width={256} height={114} alt="logo" className="object-contain"/>

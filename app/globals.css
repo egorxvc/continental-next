@@ -43,6 +43,10 @@
     @apply font-mono font-medium text-3xl md:text-7xl uppercase
 }
 
+.h2-larger {
+    @apply font-mono font-medium text-5xl md:text-7xl uppercase
+}
+
 .h3 {
     @apply font-mono font-medium text-2xl md:text-6xl uppercase
 }

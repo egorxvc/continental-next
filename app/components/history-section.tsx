@@ -62,11 +62,11 @@ export default function HistorySection() {
                                 <div className="font-mono uppercase text-7xl flex flex-col xl:items-end leading-tight">
                                     <div
                                         className="flex flex-col md:gap-6 lg:flex-row lg:whitespace-nowrap !leading-normal">
-                                        <span className="h2 text-accent !leading-tight">Your </span>
+                                        <span className="h2-larger text-accent !leading-tight">Your </span>
                                         <span
-                                            className="h2 stroke-text !leading-tight text-white"> racing journey</span>
+                                            className="h2-larger stroke-text !leading-tight text-white"> racing journey</span>
                                     </div>
-                                    <span className="h2 !leading-normal xl:text-right">starts here!</span>
+                                    <span className="h2-larger !leading-normal xl:text-right">starts here!</span>
                                 </div>
                             </div>
                         </div>
