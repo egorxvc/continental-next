@@ -135,12 +135,17 @@ export default function TeamSection() {
                                                     opacity: current === index ? 1 : 0,
                                                     translateX: current === index ? 0 : 300
                                                 }}
-                                                className="hidden md:flex flex-col gap-4 w-full xl:max-w-md justify-end px-4">
+                                                className="hidden md:flex flex-col gap-4 w-full xl:max-w-md justify-center px-4">
                                                 <div className="text-lg font-bold">{item.description}</div>
-                                                <div className="flex flex-col gap-2">
+                                                <div className="flex flex-col gap-2 relative z-10">
                                                     {
                                                         item.achievements.map((achievement, index) => (
-                                                            <div key={index} className="text-md">{achievement}</div>
+                                                            <div key={index} className="text-small flex items-start gap-2">
+                                                                <div className="h-[21px] flex items-center">
+                                                                    <div
+                                                                        className="size-2 inline-block leading-normal shrink-0 bg-accent"></div>
+                                                                </div>
+                                                                <span>{achievement}</span></div>
                                                         ))
                                                     }
                                                 </div>

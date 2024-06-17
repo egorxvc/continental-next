@@ -6,6 +6,9 @@ import {motion, MotionConfig, useScroll, useTransform, wrap} from "framer-motion
 import dd2Img from "../../public/img/cars/dd2.png"
 import clioImg from "../../public/img/cars/Clio.png"
 import supraImg from "../../public/img/cars/supra.png"
+import audiImg from "../../public/img/cars/audi.png"
+import radicalImg from "../../public/img/cars/radical.png"
+import renaultMeganeImg from "../../public/img/cars/renault_megane.png"
 import todoImg from "../../public/img/cars/todo.png"
 
 const xOffset = 100;
@@ -33,7 +36,7 @@ const cars = [{
     ]
 
 }, {
-    imgSrc: todoImg.src,
+    imgSrc: renaultMeganeImg.src,
     name: 'Renault Megane R.S.',
     trophies: [],
     settings: [
@@ -104,7 +107,7 @@ const cars = [{
         ]
     },
     {
-        imgSrc: todoImg.src,
+        imgSrc: radicalImg.src,
         name: 'Radical SR3 XXR/XX',
         trophies: [],
         settings: [
@@ -127,7 +130,7 @@ const cars = [{
         ]
     },
     {
-        imgSrc: todoImg.src,
+        imgSrc: audiImg.src,
         name: 'Audi R8 LMS GT3 Evo II',
         trophies: [],
         settings: [
@@ -233,7 +236,7 @@ export default function CarsSection() {
                                         key={idx}
                                         animate={{x: `calc(-${current * 100}%)`}}
                                         className="flex shrink-0 justify-center w-full relative ">
-                                        <motion.img src={car.imgSrc} className="w-2/3 lg:max-w-3xl" alt="car" animate={{
+                                        <motion.img src={car.imgSrc} className="w-2/3 lg:max-w-3xl object-contain" alt="car" animate={{
                                             // scale: current === idx ? 1 : 0.9,
                                             scale: current === idx ? 1 : 0.90,
                                             opacity: current === idx ? 1 : 0.4,
@@ -247,37 +250,40 @@ export default function CarsSection() {
                                 className="w-full">
                                 <div className="flex items-center justify-center gap-2">
                                     <h3 className="h4 border-b-[5px] border-accent">{cars[current].name}</h3>
-                                    {
-                                        cars[current].trophies.length ? <div className="flex gap-1">
-                                            {
-                                                [...cars[current].trophies].map((trophy, idx)  => (
-                                                    <div key={idx} className="relative group">
-                                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                                             className="size-10 text-accent" viewBox="0 0 512 512">
-                                                            <path fill="currentColor"
-                                                                  d="M392 105c.9-27 .2-56 .1-57H119.3c0 1-.8 30 .1 57H48c0 68 9.9 102.3 21 126.7S95.4 277 127.7 302c30.1 23.3 95.5 53.6 104.3 57.6v28.3c-4.6 10-23.5 28.2-83.3 28.2H128v48h256v-48h-25.7c-60.7 0-75-19.1-78.3-28.2v-28.3c9.3-4.6 80.9-40.3 104.4-57.5 25.2-18.4 50.9-51.5 58.7-70.3S464 167 464 105h-72zM109.6 211.9c-8.8-18.2-14-37.9-15.7-61.9h28.7c.7 6 1.4 11.3 2.3 16.3 6.6 39.2 14.8 70.2 25.7 96.5-17.3-13.5-31.3-30.8-41-50.9zm292.8 0c-9.9 20.3-24 37.7-41.6 51.3 11-26.2 19-56.8 25.8-96.9.8-5 1.6-10.3 2.3-16.3h29.3c-1.8 24-6.9 43.7-15.8 61.9z"/>
-                                                        </svg>
-                                                        <div className="absolute min-w-64 z-20 bg-white top-full right-0 shadow p-4 rounded-2xl hidden group-hover:block">
-                                                            {
-                                                                trophy
-                                                            }
-                                                        </div>
-                                                    </div>
-                                                ))
-                                            }
-                                        </div> : ''
-                                    }
                                 </div>
-                                <div className="py-6 body grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-3">
+                                <div className="py-6 body grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-2 max-w-4xl mx-auto">
                                     {
                                         [...cars[current].settings].map((setting, idx) => (
                                             <div
-                                                className="flex flex-1 flex-col gap-1 py-6 text-center"
+                                                className="flex flex-1 flex-col gap-1"
                                                 key={idx}>
                                                 <span className="body md:caption font-bold">{setting.title}</span>
                                                 <span className="body md:caption ">{setting.value}</span>
                                             </div>
                                         ))
+                                    }
+
+                                    {
+                                        cars[current].trophies.length ?
+                                            <div className="flex flex-1 flex-col gap-1 col-span-2">
+                                                <span className="body md:caption font-bold">Trophies</span>
+                                                <div className="flex flex-col gap-0.5">
+                                                    {
+                                                        [...cars[current].trophies].map((trophy, idx) => (
+                                                            <div key={idx} className="flex items-start gap-2">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                     className="size-8 text-accent shrink-0" viewBox="0 0 512 512">
+                                                                    <path fill="currentColor"
+                                                                          d="M392 105c.9-27 .2-56 .1-57H119.3c0 1-.8 30 .1 57H48c0 68 9.9 102.3 21 126.7S95.4 277 127.7 302c30.1 23.3 95.5 53.6 104.3 57.6v28.3c-4.6 10-23.5 28.2-83.3 28.2H128v48h256v-48h-25.7c-60.7 0-75-19.1-78.3-28.2v-28.3c9.3-4.6 80.9-40.3 104.4-57.5 25.2-18.4 50.9-51.5 58.7-70.3S464 167 464 105h-72zM109.6 211.9c-8.8-18.2-14-37.9-15.7-61.9h28.7c.7 6 1.4 11.3 2.3 16.3 6.6 39.2 14.8 70.2 25.7 96.5-17.3-13.5-31.3-30.8-41-50.9zm292.8 0c-9.9 20.3-24 37.7-41.6 51.3 11-26.2 19-56.8 25.8-96.9.8-5 1.6-10.3 2.3-16.3h29.3c-1.8 24-6.9 43.7-15.8 61.9z"/>
+                                                                </svg>
+                                                                <span className="body md:caption">{
+                                                                    trophy
+                                                                }</span>
+                                                            </div>
+                                                        ))
+                                                    }
+                                                </div>
+                                            </div> : ''
                                     }
                                 </div>
                             </div>

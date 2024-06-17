@@ -1,6 +1,6 @@
 import Image from "next/image";
 import {motion, useScroll, useTransform} from "framer-motion";
-import {useRef} from "react";
+import {useRef, useState} from "react";
 import achievementImage4 from "@/public/img/achievements/ach.jpg"
 import clioImage23Image from  "@/public/img/achievements/Clio22-23.jpg"
 import clioImage24Image from  "@/public/img/achievements/clio-23-24.jpg"
@@ -49,23 +49,28 @@ const achievements = [
 
 export default function AchievementsSection() {
     const sectionRef = useRef(null);
+    const [isViewMore, setViewMore]  = useState(false)
     const {scrollYProgress} = useScroll({
         target: sectionRef,
         offset: ['start end', 'end start']
     })
 
+    function getAchievements() {
+        return isViewMore ? achievements : achievements.slice(0,  4);
+    }
+
     const y = useTransform(scrollYProgress, [0, 1], ["-40%", "10%"])
-    const bannerClassName = 'group relative h-[250px] flex flex-col items-center justify-center bg-center bg-cover p-10  overflow-hidden'
+    const bannerClassName = 'group relative h-[400px] flex flex-col items-center justify-center bg-center bg-cover p-10  overflow-hidden'
     return (
-        <section id="achievements-section" ref={sectionRef}  className="bg-pattern-1 bg-repeat py-16 md:py-32 ">
+        <section id="achievements-section" ref={sectionRef}  className="py-16 md:py-32 ">
             <div className="container mx-auto">
                 <div className="mb-10 text-center md:text-left">
                     <h2 className="h2">Achievements</h2>
                     <span className="h4 stroke-text ">the moments
 we are proud of</span>
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-3 h-full gap-2">
-                    {achievements.map((achievement, index) => (
+                <div className="grid grid-cols-1 lg:grid-cols-3 h-full gap-2 mb-6">
+                    {(isViewMore ? achievements : achievements.slice(0,  4)).map((achievement, index) => (
                         <div key={index}
                              className={[1, 2, 5].includes(index) ? ('col-span-1 md:col-span-2 ' + bannerClassName) : bannerClassName}>
                             <motion.div className="absolute w-full h-[140%] " style={{top: y}}>
@@ -85,6 +90,12 @@ we are proud of</span>
                             </div>
                         </div>
                     ))}
+                </div>
+                <div className="flex justify-center">
+                    <button type="button" onClick={() => setViewMore(!isViewMore)}
+                            className="mx-auto px-12 caption hover:bg-accent-hover text-white uppercase parallelogram bg-accent">
+                        {!isViewMore ? <span>View more</span> : <span>Hide</span>}
+                    </button>
                 </div>
             </div>
         </section>
