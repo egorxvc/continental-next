@@ -3,12 +3,12 @@ import logoImage from "@/public/img/logo-footer.png";
 
 export default function Footer() {
     return (
-        <footer className="bg-black bg-top text-white bg-contain bg-no-repeat pt-[300px] pb-28 relative">
+        <footer className="bg-black bg-top text-white bg-contain bg-no-repeat pt-[300px] pb-12 relative">
             <div className="bg-header-pattern absolute -top-2 w-full left-0 h-[300px] bg-contain bg-no-repeat"></div>
             <div className="container mx-auto">
-                <div className="flex flex-col md:flex-row gap-6 justify-between mb-28">
+                <div className="flex flex-col md:flex-row gap-6 justify-between mb-12 items-center md:items-start">
                     <Image src={logoImage.src} width={256} height={114} alt="logo" className="object-contain"/>
-                    <div className="flex flex-col gap-2 md:flex-row md:gap-28 font-bold text-gray-400 uppercase">
+                    <div className="flex flex-col gap-2 md:flex-row md:gap-28 font-bold text-gray-400 uppercase text-center md:text-left">
                         <div className="flex flex-col gap-2">
                             <a href="#" className="hover:text-accent">Racing Team</a>
                             <a href="#" className="hover:text-accent">Racing
@@ -50,7 +50,7 @@ export default function Footer() {
                     </div>
 
                 </div>
-                <p className="font-bold">
+                <p className="">
                     contact@continentalracing.ae <br/>
                     The Binary by Omniyat P305 | Business Bay | Dubai <br/>
                     +971 04 422 12 55
