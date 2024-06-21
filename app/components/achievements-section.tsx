@@ -44,7 +44,7 @@ const achievements = [
 
 export default function AchievementsSection() {
     const [isViewMore, setViewMore] = useState(false)
-    const bannerClassName = 'group relative h-[400px] flex flex-col items-center justify-center bg-center bg-cover p-10'
+    const bannerClassName = 'relative h-[400px] flex flex-col items-center justify-center bg-center bg-cover p-10'
     return (
         <section id="achievements-section" className="py-16 md:py-32 ">
             <div className="container mx-auto">
@@ -57,7 +57,7 @@ export default function AchievementsSection() {
                         <div key={index}
                              className={[1, 2, 5].includes(index) ? ('col-span-1 md:col-span-2 ' + bannerClassName) : bannerClassName}>
                             div
-                            <div className="h-full overflow-hidden absolute w-full peer flex items-center justify-center">
+                            <div className="h-full overflow-hidden absolute w-full peer flex items-center justify-center group">
                                 <div
                                     className="absolute inset-0 bg-accent z-10 mix-blend-multiply opacity-100 transition duration-500 ease-expo group-hover:opacity-0"></div>
                                 <Image src={achievement.imgSrc} alt={achievement.title} fill
