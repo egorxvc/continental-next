@@ -1,6 +1,6 @@
 "use client";
 
-import {useEffect, useRef, useState} from "react";
+import {useRef, useState} from "react";
 import {MotionConfig, motion, wrap} from "framer-motion";
 
 // const prices = ['INSTRUCTOR ON TRACK', 'TRACK DAYS ACADEMY', 'TRACK DAYS PROFESSIONAL']
@@ -17,6 +17,10 @@ const prices = [{
                 {
                     name: 'Go-Karting (3+ ppl)',
                     price: '300 AED/person'
+                },
+                {
+                    name: 'Racing Karts',
+                    price: '800 AED*'
                 },
                 {
                     name: 'Autodrome Training',

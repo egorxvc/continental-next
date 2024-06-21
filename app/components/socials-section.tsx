@@ -5,7 +5,7 @@ import socialImage3 from "@/public/img/socials/social3.png";
 
 export default function SocialsSection() {
     return (
-        <div className="bg-socials-pattern  py-16 md:py-32 bg-cover">
+        <div className="bg-texture-white py-16 md:py-32 bg-cover">
             <div className="container mx-auto">
                 <div className="xl:flex items-center mb-12 text-center lg:text-left">
                     <div className="h2 xl:!text-[140px] stroke-text !leading-[1]">Stay</div>

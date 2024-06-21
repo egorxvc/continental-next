@@ -28,6 +28,9 @@ const config: Config = {
       },
     },
     extend: {
+      transitionTimingFunction: {
+        'expo': 'cubic-bezier(0.32, 0.72, 0, 1)',
+      },
       colors: {
         'accent': '#DA0A0A',
         'accent-hover': '#BC0808',
@@ -57,6 +60,8 @@ const config: Config = {
         'getintouch-pattern': `url('${basePath}/img/getintouch-pattern.png')`,
         'pattern-1': `url('${basePath}/img/pattern-1.png')`,
         'pattern-2': `url('${basePath}/img/pattern-2.png')`,
+        'texture-black': `url('${basePath}/img/bg-texture-black.jpg')`,
+        'texture-white': `url('${basePath}/img/bg-texture-white.jpg')`,
       }
     },
   },
