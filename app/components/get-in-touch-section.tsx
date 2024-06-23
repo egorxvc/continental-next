@@ -2,8 +2,7 @@ import Image from "next/image";
 import logoImage from "@/public/img/logo-2.png";
 import {useRef, useState} from "react";
 import {motion} from "framer-motion";
-import {Simulate} from "react-dom/test-utils";
-import mouseMove = Simulate.mouseMove;
+
 export default function GetInTouchSection() {
     return (
         <div id="contacts-section" className="bg-texture-black bg-cover bg-bottom py-32 overflow-hidden">
@@ -66,7 +65,7 @@ export default function GetInTouchSection() {
     )
 }
 
-function Magnetic({children}: any) {
+export function Magnetic({children}: any) {
     const ref = useRef(null);
 
     const [position, setPosition] = useState({x:0, y:0});
@@ -80,7 +79,7 @@ function Magnetic({children}: any) {
 
         setPosition({x, y});
     }
-    const mouseLeave  =  (event: any)  =>  {
+    const mouseLeave  =  ()  =>  {
         setPosition({x:0, y:0});
     }
     const {x,y} = position;
