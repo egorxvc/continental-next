@@ -2,7 +2,7 @@ import FadeInScroll from "@/app/components/ui/fadeInScroll";
 
 export default function WelcomeSection() {
     return (
-        <div id="racing-team-section" className="bg-welcome-pattern bg-cover">
+        <div id="racing-team-section" className="bg-texture-white bg-cover">
             <div className="container mx-auto">
                 <div className="text-center max-w-5xl mx-auto py-16 lg:py-36 flex flex-col gap-8 caption">
                     <FadeInScroll>
