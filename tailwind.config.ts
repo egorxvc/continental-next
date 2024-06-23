@@ -44,6 +44,7 @@ const config: Config = {
         'lg': '20px',
         'xl': '24px',
         '2xl': '28px',
+        '3xl': '30px',
         '4xl': '36px',
         '5xl': '46px',
         '6xl': '60px',

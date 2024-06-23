@@ -3,27 +3,26 @@ import logoImage from "@/public/img/logo-footer.png";
 
 export default function Footer() {
     return (
-        <footer className="bg-black bg-top text-white bg-repeat-x pt-[100px] md:pt-[300px] pb-12 relative -mt-[100px] -z-10">
+        <footer className="bg-black bg-top text-white bg-repeat-x pt-[100px] md:pt-[300px] pb-12 relative -mt-[100px]">
             <div className="bg-header-pattern absolute -top-2 w-full left-0 h-[100px] md:h-[300px] bg-repeat-x"></div>
             <div className="container mx-auto">
                 <div className="flex flex-col md:flex-row gap-6 justify-between mb-12 items-center md:items-start">
                     <Image src={logoImage.src} width={256} height={114} alt="logo" className="object-contain"/>
                     <div className="flex flex-col gap-2 md:flex-row md:gap-28 font-bold text-gray-400 uppercase text-center md:text-left">
                         <div className="flex flex-col gap-2">
-                            <a href="#" className="hover:text-accent">Racing Team</a>
-                            <a href="#" className="hover:text-accent">Racing
+                            <a href="/#racing-team-section" className="hover:text-accent">Racing Team</a>
+                            <a href="/#racing-academy-section" className="hover:text-accent">Racing
                                 Academy</a>
-                            <a href="#" className="hover:text-accent">Our Cars</a>
+                            <a href="/#our-cars-section" className="hover:text-accent">Our Cars</a>
                         </div>
                         <div className="flex flex-col gap-2">
-                            <a href="#" className="hover:text-accent">Contact</a>
-                            <a href="#" className="hover:text-accent">Racing
-                                Academy</a>
-                            <a href="#" className="hover:text-accent">About us</a>
+                            <a href="/#achievements-section" className="hover:text-accent">Achievements</a>
+                            <a href="/#team-section" className="hover:text-accent">Team</a>
+                            <a href="/#contacts-section" className="hover:text-accent">Contacts</a>
                         </div>
                     </div>
-                    <div className="flex gap-6">
-                        <a href="#" className="hover:text-accent">
+                    <div className="flex gap-6 relative z-30">
+                        <a href="https://wa.me/+971543587906" target="_blank" className="hover:text-accent">
                             <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -31,7 +30,7 @@ export default function Footer() {
                                     fill="currentColor"/>
                             </svg>
                         </a>
-                        <a href="#" className="hover:text-accent">
+                        <a href="mailto:racing@continentaldxb.ae" target="_blank" className="hover:text-accent">
                             <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -39,7 +38,7 @@ export default function Footer() {
                                     fill="currentColor"/>
                             </svg>
                         </a>
-                        <a href="#" className="hover:text-accent">
+                        <a href="https://t.me/continental_racing" target="_blank" className="hover:text-accent">
                             <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path

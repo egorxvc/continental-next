@@ -94,67 +94,66 @@ export default function TeamSection() {
                 <section id="team-section" className="flex flex-col relative py-16 md:py-32 mt-16 md:mt-32">
                     <TeamCaption/>
                     <div className="container pt-32 mx-auto">
-                        <div className="relative flex justify-center h-[120px] md:h-[200px]">
-                            {
-                                [...teamList].map((item, index) => (
-                                    <motion.div key={index}
-                                                className="absolute ml-auto flex w-min flex-col !leading-[0.9] z-10"
-                                                initial={{
-                                                    opacity: 0
-                                                }}
-                                                animate={{
-                                                    opacity: current === index ? 1 : 0,
-                                                }}
-                                    >
-                                        <motion.div animate={{
-                                            translateX: current === index ? 0 : 300
-                                        }} className="h1 text-accent">{item.firstName}</motion.div>
-                                        <motion.div animate={{
-                                            translateX: current === index ? 0 : -300
-                                        }}
-                                                    className="pl-16 h1 stroke-text stroke-text-accent">{item.secondName}</motion.div>
-                                    </motion.div>
-                                ))
-                            }
-                        </div>
                         <div className="flex flex-col gap-10 justify-center -mt-10">
                             <motion.div className="relative flex items-center justify-center h-[400px] md:h-[500px] lg:h-[610px] w-full">
                                 {
                                     [...teamList].map((item, index) => (
                                         <motion.div animate={{
                                             opacity: current === index ? 1 : 0,
-                                        }} className="absolute flex flex-col object-cover md:flex-row"  key={index}>
-                                            <Image className="w-full md:w-[546px] " src={item.imgSrc} width={728} height={666}
+                                        }} className="absolute flex flex-col gap-4 md:gap-0 object-cover md:flex-row"  key={index}>
+                                            <Image className="w-full md:w-[546px]" src={item.imgSrc} width={728} height={666}
                                                    alt="vasily-vladykin"/>
-                                            <motion.div
-                                                transition={{
-                                                    delay: 0.3,
-                                                    ease: [0.32, 0.72, 0, 1]
-                                                }}
-                                                animate={{
-                                                    opacity: current === index ? 1 : 0,
-                                                    translateX: current === index ? 0 : 300
-                                                }}
-                                                className="hidden md:flex flex-col gap-4 w-full xl:max-w-md justify-center px-4">
-                                                <div className="text-lg font-bold">{item.description}</div>
-                                                <div className="flex flex-col gap-2 relative z-10">
-                                                    {
-                                                        item.achievements.map((achievement, index) => (
-                                                            <div key={index} className="text-small flex items-start gap-2">
-                                                                <div className="h-[21px] flex items-center">
-                                                                    <div
-                                                                        className="size-2 inline-block leading-normal shrink-0 bg-accent"></div>
-                                                                </div>
-                                                                <span>{achievement}</span></div>
-                                                        ))
-                                                    }
-                                                </div>
-                                            </motion.div>
+                                            <div className="flex flex-col gap-8 ml-4 lg:ml-8 max-md:-order-1">
+                                                <motion.div key={index}
+                                                            className=""
+                                                            initial={{
+                                                                opacity: 0
+                                                            }}
+                                                            animate={{
+                                                                opacity: current === index ? 1 : 0,
+                                                            }}
+                                                >
+                                                    <motion.div animate={{
+                                                        translateX: current === index ? 0 : 300
+                                                    }}
+                                                                className="text-2xl lg:text-6xl font-mono uppercase text-accent leading-none">{item.firstName}</motion.div>
+                                                    <motion.div animate={{
+                                                        translateX: current === index ? 0 : -300
+                                                    }}
+                                                                className="pl-16 text-2xl lg:text-6xl font-mono uppercase stroke-text stroke-text-accent leading-none">{item.secondName}</motion.div>
+                                                </motion.div>
+                                                <motion.div
+                                                    transition={{
+                                                        delay: 0.3,
+                                                        ease: [0.32, 0.72, 0, 1]
+                                                    }}
+                                                    animate={{
+                                                        opacity: current === index ? 1 : 0,
+                                                        translateX: current === index ? 0 : 300
+                                                    }}
+                                                    className="hidden md:flex flex-col gap-4 w-full xl:max-w-md justify-center">
+                                                    <div className="text-lg font-bold">{item.description}</div>
+                                                    <div className="flex flex-col gap-2 relative z-10">
+                                                        {
+                                                            item.achievements.map((achievement, index) => (
+                                                                <div key={index}
+                                                                     className="text-small flex items-start gap-2">
+                                                                    <div className="h-[21px] flex items-center">
+                                                                        <div
+                                                                            className="size-2 inline-block leading-normal shrink-0 bg-accent"></div>
+                                                                    </div>
+                                                                    <span>{achievement}</span></div>
+                                                            ))
+                                                        }
+                                                    </div>
+                                                </motion.div>
+                                            </div>
                                         </motion.div>
                                     ))
                                 }
                             </motion.div>
-                            <div className="flex flex-row mx-auto justify-between gap-4 lg:gap-8 w-full lg:w-max relative px-16">
+                            <div
+                                className="flex flex-row mx-auto justify-between gap-4 lg:gap-8 w-full lg:w-max relative px-16">
                                 <div className="absolute h-full left-0 right-0 flex items-center justify-between z-10">
                                     <button className="w-4 md:w-8 hover:-translate-y-1 transition"
                                             onClick={onPrevClick}>
@@ -207,20 +206,22 @@ const TeamCaption = () => {
     const y = useTransform(scrollYProgress, [0, 1], ["0", "10%"])
 
     return (
-        <motion.svg ref={element} className="w-full absolute" viewBox="0 0 1440 363" fill="none" style={{top: y}}
-                    xmlns="http://www.w3.org/2000/svg">
-            <path fillRule="evenodd" clipRule="evenodd"
-                  d="M1274.95 290.36H1201.77L1131.28 164.475V362.396H1036.72V0.276855H1136.03L1238.36 189.586L1340.69 0.276855H1440V362.396H1345.44V164.475L1274.95 290.36ZM1274.38 289.39H1202.34L1130.31 160.755V361.425H1037.69V1.24768H1135.45L1238.36 191.627L1341.27 1.24768H1439.03V361.425H1346.41V160.755L1274.38 289.39Z"
-                  fill="black"/>
-            <path fillRule="evenodd" clipRule="evenodd"
-                  d="M737.38 362.396H634.957L772.045 0.276855H876.294L1013.38 362.396H910.959L887.804 298.079H760.534L737.38 362.396ZM759.852 297.108H888.487L911.641 361.425H1011.98L875.623 1.24768H772.716L636.363 361.425H736.698L759.852 297.108ZM865.333 230.218L824.169 109.301L783.006 230.218H865.333ZM784.362 229.247H863.977L824.169 112.313L784.362 229.247Z"
-                  fill="black"/>
-            <path fillRule="evenodd" clipRule="evenodd"
-                  d="M632.308 362.396H344.797V0.276855H632.308V74.254H439.356V141.775H591.145V215.752H439.356V288.419H632.308V362.396ZM438.385 289.39V214.781H590.174V142.746H438.385V73.2832H631.337V1.24768H345.768V361.425H631.337V289.39H438.385Z"
-                  fill="black"/>
-            <path fillRule="evenodd" clipRule="evenodd"
-                  d="M202.612 362.396H108.053V74.254H0V0.276855H310.665V74.254H202.612V362.396ZM109.024 73.2832V361.425H201.641V73.2832H309.694V1.24768H0.970829V73.2832H109.024Z"
-                  fill="black"/>
-        </motion.svg>
+        <div className="h-[130px]">
+            <motion.svg ref={element} className="w-full absolute" viewBox="0 0 1440 363" fill="none" style={{top: y}}
+                        xmlns="http://www.w3.org/2000/svg">
+                <path fillRule="evenodd" clipRule="evenodd"
+                      d="M1274.95 290.36H1201.77L1131.28 164.475V362.396H1036.72V0.276855H1136.03L1238.36 189.586L1340.69 0.276855H1440V362.396H1345.44V164.475L1274.95 290.36ZM1274.38 289.39H1202.34L1130.31 160.755V361.425H1037.69V1.24768H1135.45L1238.36 191.627L1341.27 1.24768H1439.03V361.425H1346.41V160.755L1274.38 289.39Z"
+                      fill="black"/>
+                <path fillRule="evenodd" clipRule="evenodd"
+                      d="M737.38 362.396H634.957L772.045 0.276855H876.294L1013.38 362.396H910.959L887.804 298.079H760.534L737.38 362.396ZM759.852 297.108H888.487L911.641 361.425H1011.98L875.623 1.24768H772.716L636.363 361.425H736.698L759.852 297.108ZM865.333 230.218L824.169 109.301L783.006 230.218H865.333ZM784.362 229.247H863.977L824.169 112.313L784.362 229.247Z"
+                      fill="black"/>
+                <path fillRule="evenodd" clipRule="evenodd"
+                      d="M632.308 362.396H344.797V0.276855H632.308V74.254H439.356V141.775H591.145V215.752H439.356V288.419H632.308V362.396ZM438.385 289.39V214.781H590.174V142.746H438.385V73.2832H631.337V1.24768H345.768V361.425H631.337V289.39H438.385Z"
+                      fill="black"/>
+                <path fillRule="evenodd" clipRule="evenodd"
+                      d="M202.612 362.396H108.053V74.254H0V0.276855H310.665V74.254H202.612V362.396ZM109.024 73.2832V361.425H201.641V73.2832H309.694V1.24768H0.970829V73.2832H109.024Z"
+                      fill="black"/>
+            </motion.svg>
+        </div>
     )
 }
