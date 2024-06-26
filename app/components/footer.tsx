@@ -50,7 +50,7 @@ export default function Footer() {
 
                 </div>
                 <p className="">
-                    contact@continentalracing.ae <br/>
+                    racing@continentaldxb.ae <br/>
                     The Binary by Omniyat P305 | Business Bay | Dubai <br/>
                     +971 04 422 12 55
                 </p>

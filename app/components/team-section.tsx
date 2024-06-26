@@ -95,15 +95,15 @@ export default function TeamSection() {
                     <TeamCaption/>
                     <div className="container pt-32 mx-auto">
                         <div className="flex flex-col gap-10 justify-center -mt-10">
-                            <motion.div className="relative flex items-center justify-center h-[400px] md:h-[500px] lg:h-[610px] w-full">
+                            <motion.div className="relative flex items-center justify-center h-[900px] md:h-[500px] lg:h-[610px] w-full">
                                 {
                                     [...teamList].map((item, index) => (
                                         <motion.div animate={{
                                             opacity: current === index ? 1 : 0,
-                                        }} className="absolute flex flex-col gap-4 md:gap-0 object-cover md:flex-row"  key={index}>
+                                        }} className="absolute flex flex-col gap-4 md:gap-0 object-cover md:flex-row w-full justify-center"  key={index}>
                                             <Image className="w-full md:w-[546px]" src={item.imgSrc} width={728} height={666}
                                                    alt="vasily-vladykin"/>
-                                            <div className="flex flex-col gap-8 ml-4 lg:ml-8 max-md:-order-1">
+                                            <div className="flex flex-col gap-8 ml-4 lg:ml-8">
                                                 <motion.div key={index}
                                                             className=""
                                                             initial={{
@@ -116,11 +116,11 @@ export default function TeamSection() {
                                                     <motion.div animate={{
                                                         translateX: current === index ? 0 : 300
                                                     }}
-                                                                className="text-2xl lg:text-6xl font-mono uppercase text-accent leading-none">{item.firstName}</motion.div>
+                                                                className="text-3xl lg:text-6xl font-mono uppercase text-accent leading-none">{item.firstName}</motion.div>
                                                     <motion.div animate={{
                                                         translateX: current === index ? 0 : -300
                                                     }}
-                                                                className="pl-16 text-2xl lg:text-6xl font-mono uppercase stroke-text stroke-text-accent leading-none">{item.secondName}</motion.div>
+                                                                className="pl-16 text-3xl lg:text-6xl font-mono uppercase stroke-text stroke-text-accent leading-none">{item.secondName}</motion.div>
                                                 </motion.div>
                                                 <motion.div
                                                     transition={{
@@ -131,7 +131,7 @@ export default function TeamSection() {
                                                         opacity: current === index ? 1 : 0,
                                                         translateX: current === index ? 0 : 300
                                                     }}
-                                                    className="hidden md:flex flex-col gap-4 w-full xl:max-w-md justify-center">
+                                                    className="flex flex-col gap-4 w-full xl:max-w-md justify-center">
                                                     <div className="text-lg font-bold">{item.description}</div>
                                                     <div className="flex flex-col gap-2 relative z-10">
                                                         {

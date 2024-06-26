@@ -12,7 +12,7 @@ const prices = [{
             list: [
                 {
                     name: 'Go-Karting (1-2 ppl)',
-                    price: '400 AED/person'
+                    price: `400 AED/person`
                 },
                 {
                     name: 'Go-Karting (3+ ppl)',
@@ -164,7 +164,7 @@ export default function PricesSection() {
                                                     <div className="flex flex-col">
                                                         {
                                                             [...car.list].map((item, _) => (
-                                                                <span key={item.price}>{item.price}</span>
+                                                                <span key={item.price} className="whitespace-nowrap">{item.price}</span>
                                                             ))
                                                         }
                                                     </div>
@@ -228,7 +228,7 @@ export default function PricesSection() {
                             {
                                 [...prices].map((price, idx) => (
                                     <motion.div
-                                        className="parallelogram-md min-w-[100dvw] bg-accent text-white container flex justify-center items-center text-whiteshadow px-[20%] py-12"
+                                        className="parallelogram-md min-w-full md:min-w-[100dvw] bg-accent text-white container flex justify-center items-center text-whiteshadow px-10 md:px-[20%] py-12"
                                         key={price.title}
                                         animate={{
                                             // scale: current === idx ? 1 : 0.9,
@@ -237,7 +237,7 @@ export default function PricesSection() {
                                             backgroundColor: current === idx ? '#DA0A0A' : '#000000'
                                         }}
                                     >
-                                        <div className="flex flex-col items-start w-full">
+                                        <div className="flex flex-col items-start md:w-full">
                                             <h3 className="h4">{price.title}</h3>
                                             <div className="border-t-[5px] border-white flex py-6 body flex-col gap-6">
                                                 {
@@ -259,7 +259,7 @@ export default function PricesSection() {
                                                                 <div className="flex flex-col pl-4">
                                                                     {
                                                                         [...car.list].map((item, _) => (
-                                                                            <span key={item.price}>{item.price}</span>
+                                                                            <span key={item.price} className="whitespace-nowrap">{item.price}</span>
                                                                         ))
                                                                     }
                                                                 </div>

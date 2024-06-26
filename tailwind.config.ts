@@ -53,7 +53,7 @@ const config: Config = {
       },
       backgroundImage: {
         'header-pattern': `url('${basePath}/img/header-pattern.png')`,
-        'hero-mobile': `url('${basePath}/img/hero-mobile.png')`,
+        'hero-mobile': `url('${basePath}/img/hero-mobile.jpg')`,
         'welcome-pattern': `url('${basePath}/img/welcome-pattern.png')`,
         'banner': `url('${basePath}/img/banner-bg.png')`,
         'achievements-pattern': `url('${basePath}/img/achievements-pattern.png')`,
