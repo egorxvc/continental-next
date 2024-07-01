@@ -134,8 +134,8 @@ export default function PricesSection() {
 
 
     return (
-        <>
-            <div className="hidden xl:block container mx-auto py-16 md:py-32 bg-texture-white">
+        <div className="bg-texture-white">
+            <div className="hidden xl:block container mx-auto py-16 md:py-32">
                 <h2 className="h2 text-center mb-12">Prices</h2>
             <div className="flex gap-4">
                 {
@@ -164,7 +164,7 @@ export default function PricesSection() {
                                                     <div className="flex flex-col">
                                                         {
                                                             [...car.list].map((item, _) => (
-                                                                <span key={item.price} className="whitespace-nowrap">{item.price}</span>
+                                                                <span key={item.price} className="whitespace-nowrap font-bold">{item.price}</span>
                                                             ))
                                                         }
                                                     </div>
@@ -259,7 +259,7 @@ export default function PricesSection() {
                                                                 <div className="flex flex-col pl-4">
                                                                     {
                                                                         [...car.list].map((item, _) => (
-                                                                            <span key={item.price} className="whitespace-nowrap">{item.price}</span>
+                                                                            <span key={item.price} className="whitespace-nowrap font-bold">{item.price}</span>
                                                                         ))
                                                                     }
                                                                 </div>
@@ -269,7 +269,7 @@ export default function PricesSection() {
                                                 }
                                             </div>
                                             <span
-                                                className="font-light italic text-sm">{price.small}</span>
+                                                className="font-light italic small">{price.small}</span>
                                         </div>
                                     </motion.div>
                                 ))
@@ -278,6 +278,6 @@ export default function PricesSection() {
                     </motion.div>
                 </MotionConfig>
             </div>
-        </>
+        </div>
     );
 }
