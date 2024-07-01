@@ -95,7 +95,7 @@ export default function TeamSection() {
                     <TeamCaption/>
                     <div className="container pt-32 mx-auto">
                         <div className="flex flex-col gap-10 justify-center -mt-10">
-                            <motion.div className="relative flex items-center justify-center h-[900px] md:h-[500px] lg:h-[610px] w-full">
+                            <motion.div className="relative flex items-center justify-center h-[730px] md:h-[500px] lg:h-[610px] w-full">
                                 {
                                     [...teamList].map((item, index) => (
                                         <motion.div animate={{
