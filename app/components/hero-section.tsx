@@ -29,7 +29,7 @@ export const HeroSection = () => {
             </motion.div>
             <motion.div
                 variants={heroTriangle}
-                className="triangle-left-bottom w-full absolute left-0 top-1/2 bottom-0 mix-blend-multiply bg-accent md:hidden"></motion.div>
+                className="triangle-left-bottom w-full absolute left-0 top-0 bottom-0 mix-blend-multiply bg-accent md:hidden"></motion.div>
             <motion.div
                 variants={heroTriangle}
                 className="triangle w-full absolute left-0 top-0 -bottom-2/3 mix-blend-multiply bg-accent hidden md:block"></motion.div>

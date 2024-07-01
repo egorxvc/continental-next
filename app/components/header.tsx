@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "@/public/img/logo.png";
+import logo from "@/public/img/continental-logo.svg";
 import {useState} from "react";
 import {motion} from "framer-motion";
 
