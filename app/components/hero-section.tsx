@@ -20,7 +20,7 @@ export const HeroSection = () => {
 
     return (
         <motion.div ref={sectionRef} initial="initial" animate="animate"
-                    className="relative md:min-h-screen flex items-start md:items-center py-48 md:py-24 md:pt-[250px] pb-[100px]  bg-cover bg-center overflow-hidden">
+                    className="relative min-h-screen flex items-center py-48 md:py-24 md:pt-[250px] pb-[100px]  bg-cover bg-center overflow-hidden">
             <motion.div className="absolute top-0 w-full h-[120%] -z-10" style={{top: y}}>
                 <Image src={heroMobileImage.src} alt={'hero'} fill
                        className={"object-cover md:hidden mix-blend-color-dodge"}/>

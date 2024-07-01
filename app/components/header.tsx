@@ -40,7 +40,7 @@ export const Header = () => {
                         className="bg-header-pattern bg-cover bg-top w-full h-[172px] absolute top-full -mt-3 left-0"></div>
                 </header>
             </div>
-            <div className="container mx-auto flex justify-between lg:hidden h-[70px]">
+            <div className="absolute bg-white z-10 container mx-auto flex justify-between lg:hidden h-[70px]">
                 <button onClick={openNav} className="z-20">
                     <svg width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path

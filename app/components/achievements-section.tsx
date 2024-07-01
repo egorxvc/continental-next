@@ -46,7 +46,7 @@ export default function AchievementsSection() {
     const [isViewMore, setViewMore] = useState(false)
     const bannerClassName = 'relative h-[400px] flex flex-col items-center justify-center bg-center bg-cover p-10'
     return (
-        <section id="achievements-section" className="py-16 md:py-32 ">
+        <section id="achievements-section" className="py-16 md:py-32 bg-texture-white">
             <div className="container mx-auto">
                 <div className="mb-10 text-center md:text-left">
                     <h2 className="h2">Achievements</h2>

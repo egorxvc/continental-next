@@ -198,7 +198,7 @@ export default function CarsSection() {
             duration: 0.5, ease: [0.32, 0.72, 0, 1]
         }}>
             <div id="our-cars-section" className="overflow-x-hidden">
-                <div className="container mx-auto py-16 mt-0 md:mt-16 lg:mt-32 relative ">
+                <div className="container mx-auto py-16 mt-16 md:mt-16 lg:mt-32 relative ">
                     <CarsCaption/>
                     <div className="flex flex-col relative "                     >
                         <motion.div onDrag={detectPaginationGesture}

@@ -135,7 +135,7 @@ export default function PricesSection() {
 
     return (
         <>
-            <div className="hidden xl:block container mx-auto py-16 md:py-32">
+            <div className="hidden xl:block container mx-auto py-16 md:py-32 bg-texture-white">
                 <h2 className="h2 text-center mb-12">Prices</h2>
             <div className="flex gap-4">
                 {
@@ -182,7 +182,7 @@ export default function PricesSection() {
             </div>
 
             </div>
-            <div className="overflow-x-hidden py-16 md:py-32 xl:hidden">
+            <div className="overflow-x-hidden py-16 md:py-32 xl:hidden bg-texture-white">
                 <MotionConfig transition={{
                     duration: 0.5, ease: [0.32, 0.72, 0, 1]
                 }}>
